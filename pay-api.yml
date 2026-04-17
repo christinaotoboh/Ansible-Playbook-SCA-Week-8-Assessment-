@@ -1,0 +1,9 @@
+---
+- name : Configure pay-api web nodes
+  hosts: webservers
+  become: yes
+  tasks: 
+    - name: Install httd
+      ansible.builtin.yum:
+        name: httpd
+        state: present
