@@ -3,7 +3,19 @@
   hosts: webservers
   become: yes
   tasks: 
-    - name: Install httd
+    - name: Install httpd
       ansible.builtin.yum:
         name: httpd
         state: present
+
+    - name: Start httpd and enable on boot
+      ansible.builtin.service:
+        name: httpd
+        state: started
+        enabled: yes
+
+    - name: Install apache2
+      ansible.builtin.apt:
+        name: apache2
+        state: present
+        update_cache: yes
