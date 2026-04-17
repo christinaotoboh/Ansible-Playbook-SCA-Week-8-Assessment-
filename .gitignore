@@ -2,3 +2,29 @@
 *.pem
 
 
+# SSH keys
+*.pem
+*.key
+*.ppk
+
+# Linux system files
+.bash_history
+.bashrc
+.bash_logout
+.profile
+.viminfo
+.lesshst
+.sudo_as_admin_successful
+
+# SSH folder
+.ssh/
+
+# Cache & logs
+.cache/
+*.log
+
+
+
+# OS files
+.DS_Store
+Thumbs.db
