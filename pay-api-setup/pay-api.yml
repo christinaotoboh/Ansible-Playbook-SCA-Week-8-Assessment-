@@ -1,5 +1,0 @@
-- name: Set up the pay-api environment
-  hosts: webservers
-  become: yes
-  roles:
-    - pay-api
