@@ -15,7 +15,7 @@ $
 
 # Command Line History (newest to oldest):
 :wq
-|2,0,1776449244,,"wq"
+|2,0,1776449358,,"wq"
 :q
 |2,0,1776448912,,"q"
 :%d
@@ -517,30 +517,34 @@ $
 |<"      when: ansible_os_family == \"Redhat\"","","    - name: Install apache2 on Ubuntu","      ansible.builtin.apt:","        name: apache2","        state: present","        update_cache: yes","      when: ansible_os_family == \"Debian\"","","    - name: Start webservice on Ubuntu and enable on boot","      ansible.builtin.service:","        name: httpd","        state: started","        enabled: yes","      when: ansible_os_family == \"Debian\""
 
 # File marks:
-'0  4  40  ~/.gitignore
-|4,48,4,40,1776449244,"~/.gitignore"
-'1  1  0  ~/.gitignore
-|4,49,1,0,1776448956,"~/.gitignore"
+'0  3  5  ~/.gitignore
+|4,48,3,5,1776449358,"~/.gitignore"
+'1  4  40  ~/.gitignore
+|4,49,4,40,1776449244,"~/.gitignore"
 '2  1  0  ~/.gitignore
 |4,50,1,0,1776448956,"~/.gitignore"
-'3  8  0  ~/.git
-|4,51,8,0,1776448912,"~/.git"
-'4  15  1  ~/pay-api-setup/roles/pay-api/handlers/main.yml
-|4,52,15,1,1776448046,"~/pay-api-setup/roles/pay-api/handlers/main.yml"
-'5  53  36  ~/pay-api-setup/roles/pay-api/tasks/main.yml
-|4,53,53,36,1776447913,"~/pay-api-setup/roles/pay-api/tasks/main.yml"
-'6  1  40  ~/pay-api-setup/roles/pay-api/tasks/main.yml
-|4,54,1,40,1776447579,"~/pay-api-setup/roles/pay-api/tasks/main.yml"
-'7  53  40  ~/pay-api-setup/roles/pay-api/tasks/main.yml
-|4,55,53,40,1776447579,"~/pay-api-setup/roles/pay-api/tasks/main.yml"
-'8  1  0  ~/pay-api-setup/roles/pay-api/tasks/main.yml
-|4,56,1,0,1776447437,"~/pay-api-setup/roles/pay-api/tasks/main.yml"
-'9  72  0  ~/pay-api-setup/roles/pay-api/tasks/main.yml
-|4,57,72,0,1776447437,"~/pay-api-setup/roles/pay-api/tasks/main.yml"
+'3  1  0  ~/.gitignore
+|4,51,1,0,1776448956,"~/.gitignore"
+'4  1  0  ~/.gitignore
+|4,52,1,0,1776448956,"~/.gitignore"
+'5  1  0  ~/.gitignore
+|4,53,1,0,1776448956,"~/.gitignore"
+'6  8  0  ~/.git
+|4,54,8,0,1776448912,"~/.git"
+'7  15  1  ~/pay-api-setup/roles/pay-api/handlers/main.yml
+|4,55,15,1,1776448046,"~/pay-api-setup/roles/pay-api/handlers/main.yml"
+'8  53  36  ~/pay-api-setup/roles/pay-api/tasks/main.yml
+|4,56,53,36,1776447913,"~/pay-api-setup/roles/pay-api/tasks/main.yml"
+'9  1  40  ~/pay-api-setup/roles/pay-api/tasks/main.yml
+|4,57,1,40,1776447579,"~/pay-api-setup/roles/pay-api/tasks/main.yml"
 
 # Jumplist (newest first):
+-'  3  5  ~/.gitignore
+|4,39,3,5,1776449358,"~/.gitignore"
 -'  4  40  ~/.gitignore
 |4,39,4,40,1776449244,"~/.gitignore"
+-'  1  0  ~/.gitignore
+|4,39,1,0,1776449220,"~/.gitignore"
 -'  1  0  ~/.gitignore
 |4,39,1,0,1776449220,"~/.gitignore"
 -'  1  0  ~/.gitignore
@@ -553,6 +557,14 @@ $
 |4,39,8,0,1776448912,"~/.git"
 -'  8  0  ~/.git
 |4,39,8,0,1776448912,"~/.git"
+-'  8  0  ~/.git
+|4,39,8,0,1776448912,"~/.git"
+-'  8  0  ~/.git
+|4,39,8,0,1776448912,"~/.git"
+-'  8  0  ~/.git
+|4,39,8,0,1776448912,"~/.git"
+-'  8  0  ~/.git
+|4,39,8,0,1776448912,"~/.git"
 -'  15  1  ~/pay-api-setup/roles/pay-api/handlers/main.yml
 |4,39,15,1,1776448046,"~/pay-api-setup/roles/pay-api/handlers/main.yml"
 -'  15  1  ~/pay-api-setup/roles/pay-api/handlers/main.yml
@@ -569,6 +581,38 @@ $
 |4,39,15,1,1776448046,"~/pay-api-setup/roles/pay-api/handlers/main.yml"
 -'  15  1  ~/pay-api-setup/roles/pay-api/handlers/main.yml
 |4,39,15,1,1776448046,"~/pay-api-setup/roles/pay-api/handlers/main.yml"
+-'  15  1  ~/pay-api-setup/roles/pay-api/handlers/main.yml
+|4,39,15,1,1776448046,"~/pay-api-setup/roles/pay-api/handlers/main.yml"
+-'  15  1  ~/pay-api-setup/roles/pay-api/handlers/main.yml
+|4,39,15,1,1776448046,"~/pay-api-setup/roles/pay-api/handlers/main.yml"
+-'  15  1  ~/pay-api-setup/roles/pay-api/handlers/main.yml
+|4,39,15,1,1776448046,"~/pay-api-setup/roles/pay-api/handlers/main.yml"
+-'  15  1  ~/pay-api-setup/roles/pay-api/handlers/main.yml
+|4,39,15,1,1776448046,"~/pay-api-setup/roles/pay-api/handlers/main.yml"
+-'  15  1  ~/pay-api-setup/roles/pay-api/handlers/main.yml
+|4,39,15,1,1776448046,"~/pay-api-setup/roles/pay-api/handlers/main.yml"
+-'  15  1  ~/pay-api-setup/roles/pay-api/handlers/main.yml
+|4,39,15,1,1776448046,"~/pay-api-setup/roles/pay-api/handlers/main.yml"
+-'  15  1  ~/pay-api-setup/roles/pay-api/handlers/main.yml
+|4,39,15,1,1776448046,"~/pay-api-setup/roles/pay-api/handlers/main.yml"
+-'  15  1  ~/pay-api-setup/roles/pay-api/handlers/main.yml
+|4,39,15,1,1776448046,"~/pay-api-setup/roles/pay-api/handlers/main.yml"
+-'  4  1  ~/pay-api-setup/roles/pay-api/handlers/main.yml
+|4,39,4,1,1776447972,"~/pay-api-setup/roles/pay-api/handlers/main.yml"
+-'  4  1  ~/pay-api-setup/roles/pay-api/handlers/main.yml
+|4,39,4,1,1776447972,"~/pay-api-setup/roles/pay-api/handlers/main.yml"
+-'  4  1  ~/pay-api-setup/roles/pay-api/handlers/main.yml
+|4,39,4,1,1776447972,"~/pay-api-setup/roles/pay-api/handlers/main.yml"
+-'  4  1  ~/pay-api-setup/roles/pay-api/handlers/main.yml
+|4,39,4,1,1776447972,"~/pay-api-setup/roles/pay-api/handlers/main.yml"
+-'  4  1  ~/pay-api-setup/roles/pay-api/handlers/main.yml
+|4,39,4,1,1776447972,"~/pay-api-setup/roles/pay-api/handlers/main.yml"
+-'  4  1  ~/pay-api-setup/roles/pay-api/handlers/main.yml
+|4,39,4,1,1776447972,"~/pay-api-setup/roles/pay-api/handlers/main.yml"
+-'  4  1  ~/pay-api-setup/roles/pay-api/handlers/main.yml
+|4,39,4,1,1776447972,"~/pay-api-setup/roles/pay-api/handlers/main.yml"
+-'  4  1  ~/pay-api-setup/roles/pay-api/handlers/main.yml
+|4,39,4,1,1776447972,"~/pay-api-setup/roles/pay-api/handlers/main.yml"
 -'  4  1  ~/pay-api-setup/roles/pay-api/handlers/main.yml
 |4,39,4,1,1776447972,"~/pay-api-setup/roles/pay-api/handlers/main.yml"
 -'  4  1  ~/pay-api-setup/roles/pay-api/handlers/main.yml
@@ -617,6 +661,38 @@ $
 |4,39,53,36,1776447913,"~/pay-api-setup/roles/pay-api/tasks/main.yml"
 -'  53  36  ~/pay-api-setup/roles/pay-api/tasks/main.yml
 |4,39,53,36,1776447913,"~/pay-api-setup/roles/pay-api/tasks/main.yml"
+-'  53  36  ~/pay-api-setup/roles/pay-api/tasks/main.yml
+|4,39,53,36,1776447913,"~/pay-api-setup/roles/pay-api/tasks/main.yml"
+-'  53  36  ~/pay-api-setup/roles/pay-api/tasks/main.yml
+|4,39,53,36,1776447913,"~/pay-api-setup/roles/pay-api/tasks/main.yml"
+-'  53  36  ~/pay-api-setup/roles/pay-api/tasks/main.yml
+|4,39,53,36,1776447913,"~/pay-api-setup/roles/pay-api/tasks/main.yml"
+-'  53  36  ~/pay-api-setup/roles/pay-api/tasks/main.yml
+|4,39,53,36,1776447913,"~/pay-api-setup/roles/pay-api/tasks/main.yml"
+-'  53  36  ~/pay-api-setup/roles/pay-api/tasks/main.yml
+|4,39,53,36,1776447913,"~/pay-api-setup/roles/pay-api/tasks/main.yml"
+-'  53  36  ~/pay-api-setup/roles/pay-api/tasks/main.yml
+|4,39,53,36,1776447913,"~/pay-api-setup/roles/pay-api/tasks/main.yml"
+-'  53  36  ~/pay-api-setup/roles/pay-api/tasks/main.yml
+|4,39,53,36,1776447913,"~/pay-api-setup/roles/pay-api/tasks/main.yml"
+-'  53  36  ~/pay-api-setup/roles/pay-api/tasks/main.yml
+|4,39,53,36,1776447913,"~/pay-api-setup/roles/pay-api/tasks/main.yml"
+-'  53  36  ~/pay-api-setup/roles/pay-api/tasks/main.yml
+|4,39,53,36,1776447913,"~/pay-api-setup/roles/pay-api/tasks/main.yml"
+-'  53  36  ~/pay-api-setup/roles/pay-api/tasks/main.yml
+|4,39,53,36,1776447913,"~/pay-api-setup/roles/pay-api/tasks/main.yml"
+-'  53  36  ~/pay-api-setup/roles/pay-api/tasks/main.yml
+|4,39,53,36,1776447913,"~/pay-api-setup/roles/pay-api/tasks/main.yml"
+-'  53  36  ~/pay-api-setup/roles/pay-api/tasks/main.yml
+|4,39,53,36,1776447913,"~/pay-api-setup/roles/pay-api/tasks/main.yml"
+-'  53  36  ~/pay-api-setup/roles/pay-api/tasks/main.yml
+|4,39,53,36,1776447913,"~/pay-api-setup/roles/pay-api/tasks/main.yml"
+-'  53  36  ~/pay-api-setup/roles/pay-api/tasks/main.yml
+|4,39,53,36,1776447913,"~/pay-api-setup/roles/pay-api/tasks/main.yml"
+-'  53  36  ~/pay-api-setup/roles/pay-api/tasks/main.yml
+|4,39,53,36,1776447913,"~/pay-api-setup/roles/pay-api/tasks/main.yml"
+-'  53  36  ~/pay-api-setup/roles/pay-api/tasks/main.yml
+|4,39,53,36,1776447913,"~/pay-api-setup/roles/pay-api/tasks/main.yml"
 -'  1  2  ~/pay-api-setup/roles/pay-api/tasks/main.yml
 |4,39,1,2,1776447899,"~/pay-api-setup/roles/pay-api/tasks/main.yml"
 -'  1  2  ~/pay-api-setup/roles/pay-api/tasks/main.yml
@@ -649,108 +725,33 @@ $
 |4,39,1,2,1776447899,"~/pay-api-setup/roles/pay-api/tasks/main.yml"
 -'  1  2  ~/pay-api-setup/roles/pay-api/tasks/main.yml
 |4,39,1,2,1776447899,"~/pay-api-setup/roles/pay-api/tasks/main.yml"
--'  53  40  ~/pay-api-setup/roles/pay-api/tasks/main.yml
-|4,39,53,40,1776447579,"~/pay-api-setup/roles/pay-api/tasks/main.yml"
--'  53  40  ~/pay-api-setup/roles/pay-api/tasks/main.yml
-|4,39,53,40,1776447579,"~/pay-api-setup/roles/pay-api/tasks/main.yml"
--'  53  40  ~/pay-api-setup/roles/pay-api/tasks/main.yml
-|4,39,53,40,1776447579,"~/pay-api-setup/roles/pay-api/tasks/main.yml"
--'  53  40  ~/pay-api-setup/roles/pay-api/tasks/main.yml
-|4,39,53,40,1776447579,"~/pay-api-setup/roles/pay-api/tasks/main.yml"
--'  53  40  ~/pay-api-setup/roles/pay-api/tasks/main.yml
-|4,39,53,40,1776447579,"~/pay-api-setup/roles/pay-api/tasks/main.yml"
--'  53  40  ~/pay-api-setup/roles/pay-api/tasks/main.yml
-|4,39,53,40,1776447579,"~/pay-api-setup/roles/pay-api/tasks/main.yml"
--'  53  40  ~/pay-api-setup/roles/pay-api/tasks/main.yml
-|4,39,53,40,1776447579,"~/pay-api-setup/roles/pay-api/tasks/main.yml"
--'  53  40  ~/pay-api-setup/roles/pay-api/tasks/main.yml
-|4,39,53,40,1776447579,"~/pay-api-setup/roles/pay-api/tasks/main.yml"
--'  53  40  ~/pay-api-setup/roles/pay-api/tasks/main.yml
-|4,39,53,40,1776447579,"~/pay-api-setup/roles/pay-api/tasks/main.yml"
--'  53  40  ~/pay-api-setup/roles/pay-api/tasks/main.yml
-|4,39,53,40,1776447579,"~/pay-api-setup/roles/pay-api/tasks/main.yml"
--'  53  40  ~/pay-api-setup/roles/pay-api/tasks/main.yml
-|4,39,53,40,1776447579,"~/pay-api-setup/roles/pay-api/tasks/main.yml"
--'  53  40  ~/pay-api-setup/roles/pay-api/tasks/main.yml
-|4,39,53,40,1776447579,"~/pay-api-setup/roles/pay-api/tasks/main.yml"
--'  53  40  ~/pay-api-setup/roles/pay-api/tasks/main.yml
-|4,39,53,40,1776447579,"~/pay-api-setup/roles/pay-api/tasks/main.yml"
--'  53  40  ~/pay-api-setup/roles/pay-api/tasks/main.yml
-|4,39,53,40,1776447579,"~/pay-api-setup/roles/pay-api/tasks/main.yml"
--'  53  40  ~/pay-api-setup/roles/pay-api/tasks/main.yml
-|4,39,53,40,1776447579,"~/pay-api-setup/roles/pay-api/tasks/main.yml"
--'  53  40  ~/pay-api-setup/roles/pay-api/tasks/main.yml
-|4,39,53,40,1776447579,"~/pay-api-setup/roles/pay-api/tasks/main.yml"
--'  1  0  ~/pay-api-setup/roles/pay-api/tasks/main.yml
-|4,39,1,0,1776447559,"~/pay-api-setup/roles/pay-api/tasks/main.yml"
--'  1  0  ~/pay-api-setup/roles/pay-api/tasks/main.yml
-|4,39,1,0,1776447559,"~/pay-api-setup/roles/pay-api/tasks/main.yml"
--'  1  0  ~/pay-api-setup/roles/pay-api/tasks/main.yml
-|4,39,1,0,1776447559,"~/pay-api-setup/roles/pay-api/tasks/main.yml"
--'  1  0  ~/pay-api-setup/roles/pay-api/tasks/main.yml
-|4,39,1,0,1776447559,"~/pay-api-setup/roles/pay-api/tasks/main.yml"
--'  1  0  ~/pay-api-setup/roles/pay-api/tasks/main.yml
-|4,39,1,0,1776447559,"~/pay-api-setup/roles/pay-api/tasks/main.yml"
--'  1  0  ~/pay-api-setup/roles/pay-api/tasks/main.yml
-|4,39,1,0,1776447559,"~/pay-api-setup/roles/pay-api/tasks/main.yml"
--'  1  0  ~/pay-api-setup/roles/pay-api/tasks/main.yml
-|4,39,1,0,1776447559,"~/pay-api-setup/roles/pay-api/tasks/main.yml"
--'  1  0  ~/pay-api-setup/roles/pay-api/tasks/main.yml
-|4,39,1,0,1776447559,"~/pay-api-setup/roles/pay-api/tasks/main.yml"
--'  1  0  ~/pay-api-setup/roles/pay-api/tasks/main.yml
-|4,39,1,0,1776447559,"~/pay-api-setup/roles/pay-api/tasks/main.yml"
--'  1  0  ~/pay-api-setup/roles/pay-api/tasks/main.yml
-|4,39,1,0,1776447559,"~/pay-api-setup/roles/pay-api/tasks/main.yml"
--'  1  0  ~/pay-api-setup/roles/pay-api/tasks/main.yml
-|4,39,1,0,1776447559,"~/pay-api-setup/roles/pay-api/tasks/main.yml"
--'  1  0  ~/pay-api-setup/roles/pay-api/tasks/main.yml
-|4,39,1,0,1776447559,"~/pay-api-setup/roles/pay-api/tasks/main.yml"
--'  1  0  ~/pay-api-setup/roles/pay-api/tasks/main.yml
-|4,39,1,0,1776447559,"~/pay-api-setup/roles/pay-api/tasks/main.yml"
--'  1  0  ~/pay-api-setup/roles/pay-api/tasks/main.yml
-|4,39,1,0,1776447559,"~/pay-api-setup/roles/pay-api/tasks/main.yml"
--'  1  0  ~/pay-api-setup/roles/pay-api/tasks/main.yml
-|4,39,1,0,1776447559,"~/pay-api-setup/roles/pay-api/tasks/main.yml"
--'  1  0  ~/pay-api-setup/roles/pay-api/tasks/main.yml
-|4,39,1,0,1776447559,"~/pay-api-setup/roles/pay-api/tasks/main.yml"
--'  72  0  ~/pay-api-setup/roles/pay-api/tasks/main.yml
-|4,39,72,0,1776447437,"~/pay-api-setup/roles/pay-api/tasks/main.yml"
--'  73  0  ~/pay-api-setup/roles/pay-api/tasks/main.yml
-|4,39,73,0,1776447437,"~/pay-api-setup/roles/pay-api/tasks/main.yml"
--'  72  0  ~/pay-api-setup/roles/pay-api/tasks/main.yml
-|4,39,72,0,1776447437,"~/pay-api-setup/roles/pay-api/tasks/main.yml"
--'  73  0  ~/pay-api-setup/roles/pay-api/tasks/main.yml
-|4,39,73,0,1776447437,"~/pay-api-setup/roles/pay-api/tasks/main.yml"
--'  72  0  ~/pay-api-setup/roles/pay-api/tasks/main.yml
-|4,39,72,0,1776447437,"~/pay-api-setup/roles/pay-api/tasks/main.yml"
--'  73  0  ~/pay-api-setup/roles/pay-api/tasks/main.yml
-|4,39,73,0,1776447437,"~/pay-api-setup/roles/pay-api/tasks/main.yml"
--'  72  0  ~/pay-api-setup/roles/pay-api/tasks/main.yml
-|4,39,72,0,1776447437,"~/pay-api-setup/roles/pay-api/tasks/main.yml"
--'  73  0  ~/pay-api-setup/roles/pay-api/tasks/main.yml
-|4,39,73,0,1776447437,"~/pay-api-setup/roles/pay-api/tasks/main.yml"
--'  72  0  ~/pay-api-setup/roles/pay-api/tasks/main.yml
-|4,39,72,0,1776447437,"~/pay-api-setup/roles/pay-api/tasks/main.yml"
--'  73  0  ~/pay-api-setup/roles/pay-api/tasks/main.yml
-|4,39,73,0,1776447437,"~/pay-api-setup/roles/pay-api/tasks/main.yml"
--'  72  0  ~/pay-api-setup/roles/pay-api/tasks/main.yml
-|4,39,72,0,1776447437,"~/pay-api-setup/roles/pay-api/tasks/main.yml"
--'  73  0  ~/pay-api-setup/roles/pay-api/tasks/main.yml
-|4,39,73,0,1776447437,"~/pay-api-setup/roles/pay-api/tasks/main.yml"
--'  72  0  ~/pay-api-setup/roles/pay-api/tasks/main.yml
-|4,39,72,0,1776447437,"~/pay-api-setup/roles/pay-api/tasks/main.yml"
+-'  1  2  ~/pay-api-setup/roles/pay-api/tasks/main.yml
+|4,39,1,2,1776447899,"~/pay-api-setup/roles/pay-api/tasks/main.yml"
+-'  1  2  ~/pay-api-setup/roles/pay-api/tasks/main.yml
+|4,39,1,2,1776447899,"~/pay-api-setup/roles/pay-api/tasks/main.yml"
+-'  1  2  ~/pay-api-setup/roles/pay-api/tasks/main.yml
+|4,39,1,2,1776447899,"~/pay-api-setup/roles/pay-api/tasks/main.yml"
+-'  1  2  ~/pay-api-setup/roles/pay-api/tasks/main.yml
+|4,39,1,2,1776447899,"~/pay-api-setup/roles/pay-api/tasks/main.yml"
+-'  1  2  ~/pay-api-setup/roles/pay-api/tasks/main.yml
+|4,39,1,2,1776447899,"~/pay-api-setup/roles/pay-api/tasks/main.yml"
+-'  1  2  ~/pay-api-setup/roles/pay-api/tasks/main.yml
+|4,39,1,2,1776447899,"~/pay-api-setup/roles/pay-api/tasks/main.yml"
+-'  1  2  ~/pay-api-setup/roles/pay-api/tasks/main.yml
+|4,39,1,2,1776447899,"~/pay-api-setup/roles/pay-api/tasks/main.yml"
 
 # History of marks within files (newest to oldest):
 
 > ~/.gitignore
-	*	1776449241	0
-	"	4	40
-	^	4	41
-	.	4	40
+	*	1776449356	0
+	"	3	5
+	^	3	6
+	.	3	5
 	+	2	2
 	+	1	0
 	+	2	3
-	+	4	40
+	+	3	0
+	+	3	5
 
 > ~/pay-api-setup/roles/pay-api/handlers/main.yml
 	*	1776448044	0
