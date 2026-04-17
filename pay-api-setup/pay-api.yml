@@ -1,5 +1,13 @@
+---
 - name: Set up the pay-api environment
   hosts: webservers
   become: yes
   roles:
     - pay-api
+
+- name: Set up the pay-api environment
+  hosts: dbservers
+  become: yes
+  roles:
+    - db
+

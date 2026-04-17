@@ -3966,3 +3966,1763 @@ Use `ansible_facts["fact_name"]` (no `ansible_` prefix) instead.
 2026-04-17 17:47:48,216 p=16274 u=ubuntu n=ansible INFO| pay-web01                  : ok=4    changed=0    unreachable=0    failed=0    skipped=3    rescued=0    ignored=0   
 2026-04-17 17:47:48,216 p=16274 u=ubuntu n=ansible INFO| pay-web02                  : ok=4    changed=0    unreachable=0    failed=0    skipped=3    rescued=0    ignored=0   
 2026-04-17 17:47:48,216 p=16274 u=ubuntu n=ansible INFO| pay-web03                  : ok=4    changed=0    unreachable=0    failed=0    skipped=3    rescued=0    ignored=0   
+2026-04-17 19:17:00,468 p=1325 u=ubuntu n=ansible INFO| PLAY [Set up the pay-api environment] ******************************************************************************************************************************
+2026-04-17 19:17:00,493 p=1325 u=ubuntu n=ansible INFO| TASK [Gathering Facts] *********************************************************************************************************************************************
+2026-04-17 19:17:03,621 p=1325 u=ubuntu n=ansible ERROR| [ERROR]: Task failed: Failed to connect to the host via ssh: ssh: connect to host 172.31.30.4 port 22: No route to host
+
+2026-04-17 19:17:03,622 p=1325 u=ubuntu n=ansible INFO| fatal: [pay-web03]: UNREACHABLE! => {"changed": false, "msg": "Task failed: Failed to connect to the host via ssh: ssh: connect to host 172.31.30.4 port 22: No route to host", "unreachable": true}
+2026-04-17 19:17:03,622 p=1325 u=ubuntu n=ansible ERROR| [ERROR]: Task failed: Failed to connect to the host via ssh: ssh: connect to host 172.31.28.161 port 22: No route to host
+
+2026-04-17 19:17:03,622 p=1325 u=ubuntu n=ansible INFO| fatal: [pay-web02]: UNREACHABLE! => {"changed": false, "msg": "Task failed: Failed to connect to the host via ssh: ssh: connect to host 172.31.28.161 port 22: No route to host", "unreachable": true}
+2026-04-17 19:17:03,623 p=1325 u=ubuntu n=ansible ERROR| [ERROR]: Task failed: Failed to connect to the host via ssh: ssh: connect to host 172.31.29.94 port 22: No route to host
+
+2026-04-17 19:17:03,623 p=1325 u=ubuntu n=ansible INFO| fatal: [pay-web01]: UNREACHABLE! => {"changed": false, "msg": "Task failed: Failed to connect to the host via ssh: ssh: connect to host 172.31.29.94 port 22: No route to host", "unreachable": true}
+2026-04-17 19:17:03,624 p=1325 u=ubuntu n=ansible INFO| PLAY RECAP *********************************************************************************************************************************************************
+2026-04-17 19:17:03,624 p=1325 u=ubuntu n=ansible INFO| pay-web01                  : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-17 19:17:03,624 p=1325 u=ubuntu n=ansible INFO| pay-web02                  : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-17 19:17:03,624 p=1325 u=ubuntu n=ansible INFO| pay-web03                  : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-17 19:19:16,325 p=1362 u=ubuntu n=ansible INFO| PLAY [set up db environment] ***************************************************************************************************************************************
+2026-04-17 19:19:16,333 p=1362 u=ubuntu n=ansible INFO| TASK [Gathering Facts] *********************************************************************************************************************************************
+2026-04-17 19:19:16,445 p=1362 u=ubuntu n=ansible ERROR| [ERROR]: Task failed: Failed to connect to the host via ssh: @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@         WARNING: UNPROTECTED PRIVATE KEY FILE!          @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+Permissions 0664 for './target-key.pem' are too open.
+It is required that your private key files are NOT accessible by others.
+This private key will be ignored.
+Load key "./target-key.pem": bad permissions
+ec2-user@172.31.30.110: Permission denied (publickey,gssapi-keyex,gssapi-with-mic).
+
+
+2026-04-17 19:19:16,446 p=1362 u=ubuntu n=ansible INFO| fatal: [pay-db01]: UNREACHABLE! => {"changed": false, "msg": "Task failed: Failed to connect to the host via ssh: @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\r\n@         WARNING: UNPROTECTED PRIVATE KEY FILE!          @\r\n@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\r\nPermissions 0664 for './target-key.pem' are too open.\r\nIt is required that your private key files are NOT accessible by others.\r\nThis private key will be ignored.\r\nLoad key \"./target-key.pem\": bad permissions\r\nec2-user@172.31.30.110: Permission denied (publickey,gssapi-keyex,gssapi-with-mic).", "unreachable": true}
+2026-04-17 19:19:16,447 p=1362 u=ubuntu n=ansible INFO| PLAY RECAP *********************************************************************************************************************************************************
+2026-04-17 19:19:16,447 p=1362 u=ubuntu n=ansible INFO| pay-db01                   : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-17 19:20:04,257 p=1369 u=ubuntu n=ansible INFO| PLAY [set up db environment] ***************************************************************************************************************************************
+2026-04-17 19:20:04,281 p=1369 u=ubuntu n=ansible INFO| TASK [Gathering Facts] *********************************************************************************************************************************************
+2026-04-17 19:20:06,805 p=1369 u=ubuntu n=ansible WARNING| [WARNING]: Host 'pay-db01' is using the discovered Python interpreter at '/usr/bin/python3.9', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.20/reference_appendices/interpreter_discovery.html for more information.
+
+2026-04-17 19:20:06,805 p=1369 u=ubuntu n=ansible INFO| ok: [pay-db01]
+2026-04-17 19:20:06,811 p=1369 u=ubuntu n=ansible INFO| TASK [Install mariadb] *********************************************************************************************************************************************
+2026-04-17 19:20:21,004 p=1369 u=ubuntu n=ansible ERROR| [ERROR]: Task failed: Module failed: Failed to install some of the specified packages
+Origin: /home/ubuntu/pay-api-setup/pay-api.yml:6:7
+
+4   become: yes
+5   tasks: 
+6     - name: Install mariadb
+        ^ column 7
+
+
+2026-04-17 19:20:21,005 p=1369 u=ubuntu n=ansible INFO| fatal: [pay-db01]: FAILED! => {"changed": false, "failures": ["No package mariadb available."], "msg": "Failed to install some of the specified packages", "rc": 1, "results": []}
+2026-04-17 19:20:21,006 p=1369 u=ubuntu n=ansible INFO| PLAY RECAP *********************************************************************************************************************************************************
+2026-04-17 19:20:21,007 p=1369 u=ubuntu n=ansible INFO| pay-db01                   : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2026-04-17 19:21:59,436 p=1413 u=ubuntu n=ansible INFO| PLAY [set up db environment] ***************************************************************************************************************************************
+2026-04-17 19:21:59,445 p=1413 u=ubuntu n=ansible INFO| TASK [Gathering Facts] *********************************************************************************************************************************************
+2026-04-17 19:22:01,563 p=1413 u=ubuntu n=ansible WARNING| [WARNING]: Host 'pay-db01' is using the discovered Python interpreter at '/usr/bin/python3.9', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.20/reference_appendices/interpreter_discovery.html for more information.
+
+2026-04-17 19:22:01,566 p=1413 u=ubuntu n=ansible INFO| ok: [pay-db01]
+2026-04-17 19:22:01,590 p=1413 u=ubuntu n=ansible INFO| TASK [Install mariadb] *********************************************************************************************************************************************
+2026-04-17 19:22:04,242 p=1413 u=ubuntu n=ansible ERROR| [ERROR]: Task failed: Module failed: Failed to install some of the specified packages
+Origin: /home/ubuntu/pay-api-setup/pay-api.yml:6:7
+
+4   become: yes
+5   tasks: 
+6     - name: Install mariadb
+        ^ column 7
+
+
+2026-04-17 19:22:04,248 p=1413 u=ubuntu n=ansible INFO| fatal: [pay-db01]: FAILED! => {"changed": false, "failures": ["No package mariadb-server available."], "msg": "Failed to install some of the specified packages", "rc": 1, "results": []}
+2026-04-17 19:22:04,252 p=1413 u=ubuntu n=ansible INFO| PLAY RECAP *********************************************************************************************************************************************************
+2026-04-17 19:22:04,256 p=1413 u=ubuntu n=ansible INFO| pay-db01                   : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2026-04-17 19:24:52,177 p=1440 u=ubuntu n=ansible INFO| PLAY [set up db environment] ***************************************************************************************************************************************
+2026-04-17 19:24:52,186 p=1440 u=ubuntu n=ansible INFO| TASK [Gathering Facts] *********************************************************************************************************************************************
+2026-04-17 19:24:53,921 p=1440 u=ubuntu n=ansible WARNING| [WARNING]: Host 'pay-db01' is using the discovered Python interpreter at '/usr/bin/python3.9', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.20/reference_appendices/interpreter_discovery.html for more information.
+
+2026-04-17 19:24:53,921 p=1440 u=ubuntu n=ansible INFO| ok: [pay-db01]
+2026-04-17 19:24:53,926 p=1440 u=ubuntu n=ansible INFO| TASK [Install mariadb] *********************************************************************************************************************************************
+2026-04-17 19:24:55,140 p=1440 u=ubuntu n=ansible ERROR| [ERROR]: Task failed: Module failed: Failed to install some of the specified packages
+Origin: /home/ubuntu/pay-api-setup/pay-api.yml:5:7
+
+3   become: yes
+4   tasks: 
+5     - name: Install mariadb
+        ^ column 7
+
+
+2026-04-17 19:24:55,141 p=1440 u=ubuntu n=ansible INFO| fatal: [pay-db01]: FAILED! => {"changed": false, "failures": ["No package mariadb-server available."], "msg": "Failed to install some of the specified packages", "rc": 1, "results": []}
+2026-04-17 19:24:55,142 p=1440 u=ubuntu n=ansible INFO| PLAY RECAP *********************************************************************************************************************************************************
+2026-04-17 19:24:55,142 p=1440 u=ubuntu n=ansible INFO| pay-db01                   : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2026-04-17 19:25:47,703 p=1471 u=ubuntu n=ansible WARNING| [WARNING]: Host 'pay-db01' is using the discovered Python interpreter at '/usr/bin/python3.9', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.20/reference_appendices/interpreter_discovery.html for more information.
+
+2026-04-17 19:25:47,703 p=1471 u=ubuntu n=ansible INFO| pay-db01 | CHANGED | rc=0 >>
+NAME="Amazon Linux"
+VERSION="2023"
+ID="amzn"
+ID_LIKE="fedora"
+VERSION_ID="2023"
+PLATFORM_ID="platform:al2023"
+PRETTY_NAME="Amazon Linux 2023.11.20260413"
+ANSI_COLOR="0;33"
+CPE_NAME="cpe:2.3:o:amazon:amazon_linux:2023"
+HOME_URL="https://aws.amazon.com/linux/amazon-linux-2023/"
+DOCUMENTATION_URL="https://docs.aws.amazon.com/linux/"
+SUPPORT_URL="https://aws.amazon.com/premiumsupport/"
+BUG_REPORT_URL="https://github.com/amazonlinux/amazon-linux-2023"
+VENDOR_NAME="AWS"
+VENDOR_URL="https://aws.amazon.com/"
+SUPPORT_END="2029-06-30"
+
+2026-04-17 19:27:05,781 p=1486 u=ubuntu n=ansible WARNING| [WARNING]: Host 'pay-db01' is using the discovered Python interpreter at '/usr/bin/python3.9', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.20/reference_appendices/interpreter_discovery.html for more information.
+
+2026-04-17 19:27:05,782 p=1486 u=ubuntu n=ansible INFO| pay-db01 | CHANGED | rc=0 >>
+NAME="Amazon Linux"
+VERSION="2023"
+ID="amzn"
+ID_LIKE="fedora"
+VERSION_ID="2023"
+PLATFORM_ID="platform:al2023"
+PRETTY_NAME="Amazon Linux 2023.11.20260413"
+ANSI_COLOR="0;33"
+CPE_NAME="cpe:2.3:o:amazon:amazon_linux:2023"
+HOME_URL="https://aws.amazon.com/linux/amazon-linux-2023/"
+DOCUMENTATION_URL="https://docs.aws.amazon.com/linux/"
+SUPPORT_URL="https://aws.amazon.com/premiumsupport/"
+BUG_REPORT_URL="https://github.com/amazonlinux/amazon-linux-2023"
+VENDOR_NAME="AWS"
+VENDOR_URL="https://aws.amazon.com/"
+SUPPORT_END="2029-06-30"
+
+2026-04-17 19:27:10,390 p=1502 u=ubuntu n=ansible INFO| PLAY [set up db environment] ***************************************************************************************************************************************
+2026-04-17 19:27:10,398 p=1502 u=ubuntu n=ansible INFO| TASK [Gathering Facts] *********************************************************************************************************************************************
+2026-04-17 19:27:11,669 p=1502 u=ubuntu n=ansible WARNING| [WARNING]: Host 'pay-db01' is using the discovered Python interpreter at '/usr/bin/python3.9', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.20/reference_appendices/interpreter_discovery.html for more information.
+
+2026-04-17 19:27:11,670 p=1502 u=ubuntu n=ansible INFO| ok: [pay-db01]
+2026-04-17 19:27:11,674 p=1502 u=ubuntu n=ansible INFO| TASK [Install mariadb] *********************************************************************************************************************************************
+2026-04-17 19:27:26,769 p=1502 u=ubuntu n=ansible INFO| changed: [pay-db01]
+2026-04-17 19:27:26,776 p=1502 u=ubuntu n=ansible INFO| TASK [Start the db service on boot] ********************************************************************************************************************************
+2026-04-17 19:27:30,931 p=1502 u=ubuntu n=ansible INFO| changed: [pay-db01]
+2026-04-17 19:27:30,933 p=1502 u=ubuntu n=ansible INFO| PLAY RECAP *********************************************************************************************************************************************************
+2026-04-17 19:27:30,933 p=1502 u=ubuntu n=ansible INFO| pay-db01                   : ok=3    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-17 19:37:31,268 p=1601 u=ubuntu n=ansible INFO| PLAY [set up db environment] ***************************************************************************************************************************************
+2026-04-17 19:37:31,277 p=1601 u=ubuntu n=ansible INFO| TASK [Gathering Facts] *********************************************************************************************************************************************
+2026-04-17 19:37:33,085 p=1601 u=ubuntu n=ansible WARNING| [WARNING]: Host 'pay-db01' is using the discovered Python interpreter at '/usr/bin/python3.9', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.20/reference_appendices/interpreter_discovery.html for more information.
+
+2026-04-17 19:37:33,086 p=1601 u=ubuntu n=ansible INFO| ok: [pay-db01]
+2026-04-17 19:37:33,091 p=1601 u=ubuntu n=ansible INFO| TASK [Install mariadb] *********************************************************************************************************************************************
+2026-04-17 19:37:34,308 p=1601 u=ubuntu n=ansible INFO| ok: [pay-db01]
+2026-04-17 19:37:34,313 p=1601 u=ubuntu n=ansible INFO| TASK [Start the db service on boot] ********************************************************************************************************************************
+2026-04-17 19:37:35,271 p=1601 u=ubuntu n=ansible INFO| ok: [pay-db01]
+2026-04-17 19:37:35,272 p=1601 u=ubuntu n=ansible INFO| PLAY RECAP *********************************************************************************************************************************************************
+2026-04-17 19:37:35,273 p=1601 u=ubuntu n=ansible INFO| pay-db01                   : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-17 19:46:22,805 p=1696 u=ubuntu n=ansible INFO| PLAY [set up db environment] ***************************************************************************************************************************************
+2026-04-17 19:46:22,813 p=1696 u=ubuntu n=ansible INFO| TASK [Gathering Facts] *********************************************************************************************************************************************
+2026-04-17 19:46:24,305 p=1696 u=ubuntu n=ansible WARNING| [WARNING]: Host 'pay-db01' is using the discovered Python interpreter at '/usr/bin/python3.9', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.20/reference_appendices/interpreter_discovery.html for more information.
+
+2026-04-17 19:46:24,305 p=1696 u=ubuntu n=ansible INFO| ok: [pay-db01]
+2026-04-17 19:46:24,310 p=1696 u=ubuntu n=ansible INFO| TASK [Install mariadb] *********************************************************************************************************************************************
+2026-04-17 19:46:25,524 p=1696 u=ubuntu n=ansible INFO| ok: [pay-db01]
+2026-04-17 19:46:25,529 p=1696 u=ubuntu n=ansible INFO| TASK [Start the db service on boot] ********************************************************************************************************************************
+2026-04-17 19:46:26,477 p=1696 u=ubuntu n=ansible INFO| ok: [pay-db01]
+2026-04-17 19:46:26,479 p=1696 u=ubuntu n=ansible INFO| PLAY RECAP *********************************************************************************************************************************************************
+2026-04-17 19:46:26,479 p=1696 u=ubuntu n=ansible INFO| pay-db01                   : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-17 19:47:03,770 p=1738 u=ubuntu n=ansible ERROR| [ERROR]: YAML parsing failed: Colons in unquoted values must be followed by a non-space character.
+Origin: /home/ubuntu/pay-api-setup/roles/pay-api/tasks/main.yml:64:153
+
+62   ansible.builtin.service:
+63     name: mariadb
+64     state: started                                                                                                ...
+
+
+For example:
+
+    raw: echo 'name: ansible'
+
+Should be:
+
+    raw: "echo 'name: ansible'"
+
+
+2026-04-17 19:47:48,664 p=1743 u=ubuntu n=ansible ERROR| [ERROR]: YAML parsing failed: Colons in unquoted values must be followed by a non-space character.
+Origin: /home/ubuntu/pay-api-setup/roles/pay-api/tasks/main.yml:64:153
+
+62   ansible.builtin.service:
+63     name: mariadb
+64     state: started                                                                                                ...
+
+
+For example:
+
+    raw: echo 'name: ansible'
+
+Should be:
+
+    raw: "echo 'name: ansible'"
+
+
+2026-04-17 19:52:00,841 p=1771 u=ubuntu n=ansible ERROR| [ERROR]: YAML parsing failed: Colons in unquoted values must be followed by a non-space character.
+Origin: /home/ubuntu/pay-api-setup/roles/pay-api/tasks/main.yml:64:153
+
+62   ansible.builtin.service:
+63     name: mariadb
+64     state: started                                                                                                ...
+
+
+For example:
+
+    raw: echo 'name: ansible'
+
+Should be:
+
+    raw: "echo 'name: ansible'"
+
+
+2026-04-17 19:55:50,573 p=1784 u=ubuntu n=ansible INFO| PLAY [Set up the pay-api environment] ******************************************************************************************************************************
+2026-04-17 19:55:50,583 p=1784 u=ubuntu n=ansible INFO| TASK [Gathering Facts] *********************************************************************************************************************************************
+2026-04-17 19:55:52,579 p=1784 u=ubuntu n=ansible WARNING| [WARNING]: Host 'pay-web02' is using the discovered Python interpreter at '/usr/bin/python3.9', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.20/reference_appendices/interpreter_discovery.html for more information.
+
+2026-04-17 19:55:52,579 p=1784 u=ubuntu n=ansible INFO| ok: [pay-web02]
+2026-04-17 19:55:52,586 p=1784 u=ubuntu n=ansible WARNING| [WARNING]: Host 'pay-web01' is using the discovered Python interpreter at '/usr/bin/python3.9', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.20/reference_appendices/interpreter_discovery.html for more information.
+
+2026-04-17 19:55:52,586 p=1784 u=ubuntu n=ansible INFO| ok: [pay-web01]
+2026-04-17 19:55:53,089 p=1784 u=ubuntu n=ansible WARNING| [WARNING]: Host 'pay-web03' is using the discovered Python interpreter at '/usr/bin/python3.12', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.20/reference_appendices/interpreter_discovery.html for more information.
+
+2026-04-17 19:55:53,089 p=1784 u=ubuntu n=ansible INFO| ok: [pay-web03]
+2026-04-17 19:55:53,094 p=1784 u=ubuntu n=ansible INFO| TASK [pay-api : Install httpd on Centos] ***************************************************************************************************************************
+2026-04-17 19:55:53,152 p=1784 u=ubuntu n=ansible WARNING| [WARNING]: Deprecation warnings can be disabled by setting `deprecation_warnings=False` in ansible.cfg.
+
+2026-04-17 19:55:53,153 p=1784 u=ubuntu n=ansible INFO| [DEPRECATION WARNING]: INJECT_FACTS_AS_VARS default to `True` is deprecated, top-level facts will not be auto injected after the change. This feature will be removed from ansible-core version 2.24.
+Origin: /home/ubuntu/pay-api-setup/roles/pay-api/tasks/main.yml:7:9
+
+5     name: httpd
+6     state: present
+7   when: ansible_os_family == "RedHat"
+          ^ column 9
+
+Use `ansible_facts["fact_name"]` (no `ansible_` prefix) instead.
+
+
+2026-04-17 19:55:53,153 p=1784 u=ubuntu n=ansible INFO| skipping: [pay-web03]
+2026-04-17 19:55:54,379 p=1784 u=ubuntu n=ansible INFO| ok: [pay-web02]
+2026-04-17 19:55:54,412 p=1784 u=ubuntu n=ansible INFO| ok: [pay-web01]
+2026-04-17 19:55:54,418 p=1784 u=ubuntu n=ansible INFO| TASK [pay-api : Install apache2 on Ubuntu] *************************************************************************************************************************
+2026-04-17 19:55:54,454 p=1784 u=ubuntu n=ansible INFO| [DEPRECATION WARNING]: INJECT_FACTS_AS_VARS default to `True` is deprecated, top-level facts will not be auto injected after the change. This feature will be removed from ansible-core version 2.24.
+Origin: /home/ubuntu/pay-api-setup/roles/pay-api/tasks/main.yml:14:9
+
+12     state: present
+13     update_cache: yes
+14   when: ansible_os_family == "Debian"
+           ^ column 9
+
+Use `ansible_facts["fact_name"]` (no `ansible_` prefix) instead.
+
+
+2026-04-17 19:55:54,455 p=1784 u=ubuntu n=ansible INFO| skipping: [pay-web01]
+2026-04-17 19:55:54,456 p=1784 u=ubuntu n=ansible INFO| skipping: [pay-web02]
+2026-04-17 19:56:04,738 p=1784 u=ubuntu n=ansible INFO| ok: [pay-web03]
+2026-04-17 19:56:04,745 p=1784 u=ubuntu n=ansible INFO| TASK [pay-api : Start httpd on Centos and enable on boot] **********************************************************************************************************
+2026-04-17 19:56:04,809 p=1784 u=ubuntu n=ansible INFO| [DEPRECATION WARNING]: INJECT_FACTS_AS_VARS default to `True` is deprecated, top-level facts will not be auto injected after the change. This feature will be removed from ansible-core version 2.24.
+Origin: /home/ubuntu/pay-api-setup/roles/pay-api/tasks/main.yml:21:9
+
+19     state: started
+20     enabled: yes
+21   when: ansible_os_family == "RedHat"
+           ^ column 9
+
+Use `ansible_facts["fact_name"]` (no `ansible_` prefix) instead.
+
+
+2026-04-17 19:56:04,810 p=1784 u=ubuntu n=ansible INFO| skipping: [pay-web03]
+2026-04-17 19:56:05,774 p=1784 u=ubuntu n=ansible INFO| ok: [pay-web02]
+2026-04-17 19:56:05,779 p=1784 u=ubuntu n=ansible INFO| ok: [pay-web01]
+2026-04-17 19:56:05,784 p=1784 u=ubuntu n=ansible INFO| TASK [pay-api : Start webservice on Ubuntu and enable on boot] *****************************************************************************************************
+2026-04-17 19:56:05,825 p=1784 u=ubuntu n=ansible INFO| [DEPRECATION WARNING]: INJECT_FACTS_AS_VARS default to `True` is deprecated, top-level facts will not be auto injected after the change. This feature will be removed from ansible-core version 2.24.
+Origin: /home/ubuntu/pay-api-setup/roles/pay-api/tasks/main.yml:29:9
+
+27     state: started
+28     enabled: yes
+29   when: ansible_os_family == "Debian"
+           ^ column 9
+
+Use `ansible_facts["fact_name"]` (no `ansible_` prefix) instead.
+
+
+2026-04-17 19:56:05,825 p=1784 u=ubuntu n=ansible INFO| skipping: [pay-web01]
+2026-04-17 19:56:05,826 p=1784 u=ubuntu n=ansible INFO| skipping: [pay-web02]
+2026-04-17 19:56:06,622 p=1784 u=ubuntu n=ansible INFO| ok: [pay-web03]
+2026-04-17 19:56:06,627 p=1784 u=ubuntu n=ansible INFO| TASK [pay-api : Install standard tools on redhat] ******************************************************************************************************************
+2026-04-17 19:56:06,696 p=1784 u=ubuntu n=ansible INFO| [DEPRECATION WARNING]: INJECT_FACTS_AS_VARS default to `True` is deprecated, top-level facts will not be auto injected after the change. This feature will be removed from ansible-core version 2.24.
+Origin: /home/ubuntu/pay-api-setup/roles/pay-api/tasks/main.yml:41:9
+
+39     - unzip
+40     - htop
+41   when: ansible_os_family == "RedHat"
+           ^ column 9
+
+Use `ansible_facts["fact_name"]` (no `ansible_` prefix) instead.
+
+
+2026-04-17 19:56:06,697 p=1784 u=ubuntu n=ansible INFO| skipping: [pay-web03] => (item=git) 
+2026-04-17 19:56:06,704 p=1784 u=ubuntu n=ansible INFO| skipping: [pay-web03] => (item=wget) 
+2026-04-17 19:56:06,708 p=1784 u=ubuntu n=ansible INFO| skipping: [pay-web03] => (item=zip) 
+2026-04-17 19:56:06,713 p=1784 u=ubuntu n=ansible INFO| skipping: [pay-web03] => (item=unzip) 
+2026-04-17 19:56:06,717 p=1784 u=ubuntu n=ansible INFO| skipping: [pay-web03] => (item=htop) 
+2026-04-17 19:56:06,720 p=1784 u=ubuntu n=ansible INFO| skipping: [pay-web03]
+2026-04-17 19:56:07,724 p=1784 u=ubuntu n=ansible INFO| ok: [pay-web02] => (item=git)
+2026-04-17 19:56:07,741 p=1784 u=ubuntu n=ansible INFO| ok: [pay-web01] => (item=git)
+2026-04-17 19:56:08,754 p=1784 u=ubuntu n=ansible INFO| ok: [pay-web02] => (item=wget)
+2026-04-17 19:56:08,765 p=1784 u=ubuntu n=ansible INFO| ok: [pay-web01] => (item=wget)
+2026-04-17 19:56:09,780 p=1784 u=ubuntu n=ansible INFO| ok: [pay-web01] => (item=zip)
+2026-04-17 19:56:09,795 p=1784 u=ubuntu n=ansible INFO| ok: [pay-web02] => (item=zip)
+2026-04-17 19:56:10,817 p=1784 u=ubuntu n=ansible INFO| ok: [pay-web01] => (item=unzip)
+2026-04-17 19:56:10,834 p=1784 u=ubuntu n=ansible INFO| ok: [pay-web02] => (item=unzip)
+2026-04-17 19:56:11,832 p=1784 u=ubuntu n=ansible INFO| ok: [pay-web01] => (item=htop)
+2026-04-17 19:56:11,862 p=1784 u=ubuntu n=ansible INFO| ok: [pay-web02] => (item=htop)
+2026-04-17 19:56:11,870 p=1784 u=ubuntu n=ansible INFO| TASK [pay-api : Install standard tools on ubuntu] ******************************************************************************************************************
+2026-04-17 19:56:11,896 p=1784 u=ubuntu n=ansible INFO| [DEPRECATION WARNING]: INJECT_FACTS_AS_VARS default to `True` is deprecated, top-level facts will not be auto injected after the change. This feature will be removed from ansible-core version 2.24.
+Origin: /home/ubuntu/pay-api-setup/roles/pay-api/tasks/main.yml:53:9
+
+51     - unzip
+52     - htop
+53   when: ansible_os_family == "Debian"
+           ^ column 9
+
+Use `ansible_facts["fact_name"]` (no `ansible_` prefix) instead.
+
+
+2026-04-17 19:56:11,901 p=1784 u=ubuntu n=ansible INFO| skipping: [pay-web01] => (item=git) 
+2026-04-17 19:56:11,912 p=1784 u=ubuntu n=ansible INFO| skipping: [pay-web01] => (item=wget) 
+2026-04-17 19:56:11,917 p=1784 u=ubuntu n=ansible INFO| skipping: [pay-web01] => (item=zip) 
+2026-04-17 19:56:11,926 p=1784 u=ubuntu n=ansible INFO| skipping: [pay-web02] => (item=git) 
+2026-04-17 19:56:11,936 p=1784 u=ubuntu n=ansible INFO| skipping: [pay-web01] => (item=unzip) 
+2026-04-17 19:56:11,940 p=1784 u=ubuntu n=ansible INFO| skipping: [pay-web02] => (item=wget) 
+2026-04-17 19:56:11,942 p=1784 u=ubuntu n=ansible INFO| skipping: [pay-web01] => (item=htop) 
+2026-04-17 19:56:11,945 p=1784 u=ubuntu n=ansible INFO| skipping: [pay-web02] => (item=zip) 
+2026-04-17 19:56:11,947 p=1784 u=ubuntu n=ansible INFO| skipping: [pay-web01]
+2026-04-17 19:56:11,949 p=1784 u=ubuntu n=ansible INFO| skipping: [pay-web02] => (item=unzip) 
+2026-04-17 19:56:11,951 p=1784 u=ubuntu n=ansible INFO| skipping: [pay-web02] => (item=htop) 
+2026-04-17 19:56:11,954 p=1784 u=ubuntu n=ansible INFO| skipping: [pay-web02]
+2026-04-17 19:56:13,203 p=1784 u=ubuntu n=ansible INFO| ok: [pay-web03] => (item=git)
+2026-04-17 19:56:14,368 p=1784 u=ubuntu n=ansible INFO| ok: [pay-web03] => (item=wget)
+2026-04-17 19:56:15,548 p=1784 u=ubuntu n=ansible INFO| ok: [pay-web03] => (item=zip)
+2026-04-17 19:56:16,726 p=1784 u=ubuntu n=ansible INFO| ok: [pay-web03] => (item=unzip)
+2026-04-17 19:56:17,885 p=1784 u=ubuntu n=ansible INFO| ok: [pay-web03] => (item=htop)
+2026-04-17 19:56:17,893 p=1784 u=ubuntu n=ansible INFO| TASK [pay-api : Install mariadb] ***********************************************************************************************************************************
+2026-04-17 19:56:17,956 p=1784 u=ubuntu n=ansible INFO| [DEPRECATION WARNING]: INJECT_FACTS_AS_VARS default to `True` is deprecated, top-level facts will not be auto injected after the change. This feature will be removed from ansible-core version 2.24.
+Origin: /home/ubuntu/pay-api-setup/roles/pay-api/tasks/main.yml:59:9
+
+57     name: mariadb105-server
+58     state: present
+59   when: ansible_os_family == "RedHat"
+           ^ column 9
+
+Use `ansible_facts["fact_name"]` (no `ansible_` prefix) instead.
+
+
+2026-04-17 19:56:17,956 p=1784 u=ubuntu n=ansible INFO| skipping: [pay-web03]
+2026-04-17 19:56:32,652 p=1784 u=ubuntu n=ansible INFO| changed: [pay-web01]
+2026-04-17 19:56:32,732 p=1784 u=ubuntu n=ansible INFO| changed: [pay-web02]
+2026-04-17 19:56:32,739 p=1784 u=ubuntu n=ansible INFO| TASK [pay-api : Start the db service on boot] **********************************************************************************************************************
+2026-04-17 19:56:32,798 p=1784 u=ubuntu n=ansible INFO| [DEPRECATION WARNING]: INJECT_FACTS_AS_VARS default to `True` is deprecated, top-level facts will not be auto injected after the change. This feature will be removed from ansible-core version 2.24.
+Origin: /home/ubuntu/pay-api-setup/roles/pay-api/tasks/main.yml:66:9
+
+64     state: started 
+65     enabled: yes
+66   when: ansible_os_family == "RedHat"  
+           ^ column 9
+
+Use `ansible_facts["fact_name"]` (no `ansible_` prefix) instead.
+
+
+2026-04-17 19:56:32,798 p=1784 u=ubuntu n=ansible INFO| skipping: [pay-web03]
+2026-04-17 19:56:36,183 p=1784 u=ubuntu n=ansible INFO| changed: [pay-web01]
+2026-04-17 19:56:36,212 p=1784 u=ubuntu n=ansible INFO| changed: [pay-web02]
+2026-04-17 19:56:36,227 p=1784 u=ubuntu n=ansible INFO| PLAY RECAP *********************************************************************************************************************************************************
+2026-04-17 19:56:36,227 p=1784 u=ubuntu n=ansible INFO| pay-web01                  : ok=6    changed=2    unreachable=0    failed=0    skipped=3    rescued=0    ignored=0   
+2026-04-17 19:56:36,227 p=1784 u=ubuntu n=ansible INFO| pay-web02                  : ok=6    changed=2    unreachable=0    failed=0    skipped=3    rescued=0    ignored=0   
+2026-04-17 19:56:36,227 p=1784 u=ubuntu n=ansible INFO| pay-web03                  : ok=4    changed=0    unreachable=0    failed=0    skipped=5    rescued=0    ignored=0   
+2026-04-17 19:59:31,565 p=2035 u=ubuntu n=ansible INFO| {
+    "_meta": {
+        "hostvars": {
+            "pay-db01": {
+                "ansible_host": "172.31.30.110",
+                "ansible_ssh_common_args": "-o StrictHostKeyChecking=no",
+                "ansible_ssh_private_key_file": "./target-key.pem",
+                "ansible_user": "ec2-user"
+            },
+            "pay-web01": {
+                "ansible_host": "172.31.29.94",
+                "ansible_ssh_common_args": "-o StrictHostKeyChecking=no",
+                "ansible_ssh_private_key_file": "./target-key.pem",
+                "ansible_user": "ec2-user"
+            },
+            "pay-web02": {
+                "ansible_host": "172.31.28.161",
+                "ansible_ssh_common_args": "-o StrictHostKeyChecking=no",
+                "ansible_ssh_private_key_file": "./target-key.pem",
+                "ansible_user": "ec2-user"
+            },
+            "pay-web03": {
+                "ansible_host": "172.31.30.4",
+                "ansible_ssh_common_args": "-o StrictHostKeyChecking=no",
+                "ansible_ssh_private_key_file": "./target-key.pem",
+                "ansible_user": "ubuntu"
+            }
+        },
+        "profile": "inventory_legacy"
+    },
+    "all": {
+        "children": [
+            "ungrouped",
+            "webservers",
+            "dbservers"
+        ]
+    },
+    "dbservers": {
+        "hosts": [
+            "pay-db01"
+        ]
+    },
+    "webservers": {
+        "hosts": [
+            "pay-web01",
+            "pay-web02",
+            "pay-web03"
+        ]
+    }
+}
+2026-04-17 19:59:59,885 p=2038 u=ubuntu n=ansible INFO| - Role roles/db was created successfully
+2026-04-17 20:19:56,289 p=2160 u=ubuntu n=ansible INFO| PLAY [Set up the pay-api environment] ******************************************************************************************************************************
+2026-04-17 20:19:56,300 p=2160 u=ubuntu n=ansible INFO| TASK [Gathering Facts] *********************************************************************************************************************************************
+2026-04-17 20:19:58,105 p=2160 u=ubuntu n=ansible WARNING| [WARNING]: Host 'pay-web01' is using the discovered Python interpreter at '/usr/bin/python3.9', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.20/reference_appendices/interpreter_discovery.html for more information.
+
+2026-04-17 20:19:58,106 p=2160 u=ubuntu n=ansible INFO| ok: [pay-web01]
+2026-04-17 20:19:58,543 p=2160 u=ubuntu n=ansible WARNING| [WARNING]: Host 'pay-web03' is using the discovered Python interpreter at '/usr/bin/python3.12', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.20/reference_appendices/interpreter_discovery.html for more information.
+
+2026-04-17 20:19:58,543 p=2160 u=ubuntu n=ansible INFO| ok: [pay-web03]
+2026-04-17 20:19:59,101 p=2160 u=ubuntu n=ansible WARNING| [WARNING]: Host 'pay-web02' is using the discovered Python interpreter at '/usr/bin/python3.9', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.20/reference_appendices/interpreter_discovery.html for more information.
+
+2026-04-17 20:19:59,101 p=2160 u=ubuntu n=ansible INFO| ok: [pay-web02]
+2026-04-17 20:19:59,106 p=2160 u=ubuntu n=ansible INFO| TASK [pay-api : Install httpd on Centos] ***************************************************************************************************************************
+2026-04-17 20:19:59,167 p=2160 u=ubuntu n=ansible WARNING| [WARNING]: Deprecation warnings can be disabled by setting `deprecation_warnings=False` in ansible.cfg.
+
+2026-04-17 20:19:59,168 p=2160 u=ubuntu n=ansible INFO| [DEPRECATION WARNING]: INJECT_FACTS_AS_VARS default to `True` is deprecated, top-level facts will not be auto injected after the change. This feature will be removed from ansible-core version 2.24.
+Origin: /home/ubuntu/pay-api-setup/roles/pay-api/tasks/main.yml:7:9
+
+5     name: httpd
+6     state: present
+7   when: ansible_os_family == "RedHat"
+          ^ column 9
+
+Use `ansible_facts["fact_name"]` (no `ansible_` prefix) instead.
+
+
+2026-04-17 20:19:59,169 p=2160 u=ubuntu n=ansible INFO| skipping: [pay-web03]
+2026-04-17 20:20:00,531 p=2160 u=ubuntu n=ansible INFO| ok: [pay-web02]
+2026-04-17 20:20:00,752 p=2160 u=ubuntu n=ansible INFO| ok: [pay-web01]
+2026-04-17 20:20:00,759 p=2160 u=ubuntu n=ansible INFO| TASK [pay-api : Install apache2 on Ubuntu] *************************************************************************************************************************
+2026-04-17 20:20:00,797 p=2160 u=ubuntu n=ansible INFO| [DEPRECATION WARNING]: INJECT_FACTS_AS_VARS default to `True` is deprecated, top-level facts will not be auto injected after the change. This feature will be removed from ansible-core version 2.24.
+Origin: /home/ubuntu/pay-api-setup/roles/pay-api/tasks/main.yml:14:9
+
+12     state: present
+13     update_cache: yes
+14   when: ansible_os_family == "Debian"
+           ^ column 9
+
+Use `ansible_facts["fact_name"]` (no `ansible_` prefix) instead.
+
+
+2026-04-17 20:20:00,797 p=2160 u=ubuntu n=ansible INFO| skipping: [pay-web01]
+2026-04-17 20:20:00,799 p=2160 u=ubuntu n=ansible INFO| skipping: [pay-web02]
+2026-04-17 20:20:04,571 p=2160 u=ubuntu n=ansible INFO| ok: [pay-web03]
+2026-04-17 20:20:04,582 p=2160 u=ubuntu n=ansible INFO| TASK [pay-api : Start httpd on Centos and enable on boot] **********************************************************************************************************
+2026-04-17 20:20:04,671 p=2160 u=ubuntu n=ansible INFO| [DEPRECATION WARNING]: INJECT_FACTS_AS_VARS default to `True` is deprecated, top-level facts will not be auto injected after the change. This feature will be removed from ansible-core version 2.24.
+Origin: /home/ubuntu/pay-api-setup/roles/pay-api/tasks/main.yml:21:9
+
+19     state: started
+20     enabled: yes
+21   when: ansible_os_family == "RedHat"
+           ^ column 9
+
+Use `ansible_facts["fact_name"]` (no `ansible_` prefix) instead.
+
+
+2026-04-17 20:20:04,672 p=2160 u=ubuntu n=ansible INFO| skipping: [pay-web03]
+2026-04-17 20:20:05,846 p=2160 u=ubuntu n=ansible INFO| ok: [pay-web01]
+2026-04-17 20:20:05,847 p=2160 u=ubuntu n=ansible INFO| ok: [pay-web02]
+2026-04-17 20:20:05,853 p=2160 u=ubuntu n=ansible INFO| TASK [pay-api : Start webservice on Ubuntu and enable on boot] *****************************************************************************************************
+2026-04-17 20:20:05,892 p=2160 u=ubuntu n=ansible INFO| [DEPRECATION WARNING]: INJECT_FACTS_AS_VARS default to `True` is deprecated, top-level facts will not be auto injected after the change. This feature will be removed from ansible-core version 2.24.
+Origin: /home/ubuntu/pay-api-setup/roles/pay-api/tasks/main.yml:29:9
+
+27     state: started
+28     enabled: yes
+29   when: ansible_os_family == "Debian"
+           ^ column 9
+
+Use `ansible_facts["fact_name"]` (no `ansible_` prefix) instead.
+
+
+2026-04-17 20:20:05,892 p=2160 u=ubuntu n=ansible INFO| skipping: [pay-web01]
+2026-04-17 20:20:05,893 p=2160 u=ubuntu n=ansible INFO| skipping: [pay-web02]
+2026-04-17 20:20:06,555 p=2160 u=ubuntu n=ansible INFO| ok: [pay-web03]
+2026-04-17 20:20:06,571 p=2160 u=ubuntu n=ansible INFO| TASK [pay-api : Install standard tools on redhat] ******************************************************************************************************************
+2026-04-17 20:20:06,650 p=2160 u=ubuntu n=ansible INFO| [DEPRECATION WARNING]: INJECT_FACTS_AS_VARS default to `True` is deprecated, top-level facts will not be auto injected after the change. This feature will be removed from ansible-core version 2.24.
+Origin: /home/ubuntu/pay-api-setup/roles/pay-api/tasks/main.yml:41:9
+
+39     - unzip
+40     - htop
+41   when: ansible_os_family == "RedHat"
+           ^ column 9
+
+Use `ansible_facts["fact_name"]` (no `ansible_` prefix) instead.
+
+
+2026-04-17 20:20:06,651 p=2160 u=ubuntu n=ansible INFO| skipping: [pay-web03] => (item=git) 
+2026-04-17 20:20:06,655 p=2160 u=ubuntu n=ansible INFO| skipping: [pay-web03] => (item=wget) 
+2026-04-17 20:20:06,660 p=2160 u=ubuntu n=ansible INFO| skipping: [pay-web03] => (item=zip) 
+2026-04-17 20:20:06,664 p=2160 u=ubuntu n=ansible INFO| skipping: [pay-web03] => (item=unzip) 
+2026-04-17 20:20:06,668 p=2160 u=ubuntu n=ansible INFO| skipping: [pay-web03] => (item=htop) 
+2026-04-17 20:20:06,671 p=2160 u=ubuntu n=ansible INFO| skipping: [pay-web03]
+2026-04-17 20:20:07,709 p=2160 u=ubuntu n=ansible INFO| ok: [pay-web01] => (item=git)
+2026-04-17 20:20:07,739 p=2160 u=ubuntu n=ansible INFO| ok: [pay-web02] => (item=git)
+2026-04-17 20:20:08,755 p=2160 u=ubuntu n=ansible INFO| ok: [pay-web01] => (item=wget)
+2026-04-17 20:20:08,779 p=2160 u=ubuntu n=ansible INFO| ok: [pay-web02] => (item=wget)
+2026-04-17 20:20:09,802 p=2160 u=ubuntu n=ansible INFO| ok: [pay-web01] => (item=zip)
+2026-04-17 20:20:09,806 p=2160 u=ubuntu n=ansible INFO| ok: [pay-web02] => (item=zip)
+2026-04-17 20:20:10,849 p=2160 u=ubuntu n=ansible INFO| ok: [pay-web02] => (item=unzip)
+2026-04-17 20:20:10,862 p=2160 u=ubuntu n=ansible INFO| ok: [pay-web01] => (item=unzip)
+2026-04-17 20:20:11,892 p=2160 u=ubuntu n=ansible INFO| ok: [pay-web02] => (item=htop)
+2026-04-17 20:20:11,900 p=2160 u=ubuntu n=ansible INFO| ok: [pay-web01] => (item=htop)
+2026-04-17 20:20:11,909 p=2160 u=ubuntu n=ansible INFO| TASK [pay-api : Install standard tools on ubuntu] ******************************************************************************************************************
+2026-04-17 20:20:11,942 p=2160 u=ubuntu n=ansible INFO| [DEPRECATION WARNING]: INJECT_FACTS_AS_VARS default to `True` is deprecated, top-level facts will not be auto injected after the change. This feature will be removed from ansible-core version 2.24.
+Origin: /home/ubuntu/pay-api-setup/roles/pay-api/tasks/main.yml:53:9
+
+51     - unzip
+52     - htop
+53   when: ansible_os_family == "Debian"
+           ^ column 9
+
+Use `ansible_facts["fact_name"]` (no `ansible_` prefix) instead.
+
+
+2026-04-17 20:20:11,947 p=2160 u=ubuntu n=ansible INFO| skipping: [pay-web01] => (item=git) 
+2026-04-17 20:20:11,952 p=2160 u=ubuntu n=ansible INFO| skipping: [pay-web01] => (item=wget) 
+2026-04-17 20:20:11,960 p=2160 u=ubuntu n=ansible INFO| skipping: [pay-web01] => (item=zip) 
+2026-04-17 20:20:11,971 p=2160 u=ubuntu n=ansible INFO| skipping: [pay-web02] => (item=git) 
+2026-04-17 20:20:11,975 p=2160 u=ubuntu n=ansible INFO| skipping: [pay-web01] => (item=unzip) 
+2026-04-17 20:20:11,978 p=2160 u=ubuntu n=ansible INFO| skipping: [pay-web01] => (item=htop) 
+2026-04-17 20:20:11,980 p=2160 u=ubuntu n=ansible INFO| skipping: [pay-web02] => (item=wget) 
+2026-04-17 20:20:11,982 p=2160 u=ubuntu n=ansible INFO| skipping: [pay-web02] => (item=zip) 
+2026-04-17 20:20:11,986 p=2160 u=ubuntu n=ansible INFO| skipping: [pay-web01]
+2026-04-17 20:20:11,987 p=2160 u=ubuntu n=ansible INFO| skipping: [pay-web02] => (item=unzip) 
+2026-04-17 20:20:11,988 p=2160 u=ubuntu n=ansible INFO| skipping: [pay-web02] => (item=htop) 
+2026-04-17 20:20:11,991 p=2160 u=ubuntu n=ansible INFO| skipping: [pay-web02]
+2026-04-17 20:20:13,158 p=2160 u=ubuntu n=ansible INFO| ok: [pay-web03] => (item=git)
+2026-04-17 20:20:14,324 p=2160 u=ubuntu n=ansible INFO| ok: [pay-web03] => (item=wget)
+2026-04-17 20:20:15,505 p=2160 u=ubuntu n=ansible INFO| ok: [pay-web03] => (item=zip)
+2026-04-17 20:20:16,681 p=2160 u=ubuntu n=ansible INFO| ok: [pay-web03] => (item=unzip)
+2026-04-17 20:20:17,848 p=2160 u=ubuntu n=ansible INFO| ok: [pay-web03] => (item=htop)
+2026-04-17 20:20:17,857 p=2160 u=ubuntu n=ansible INFO| TASK [pay-api : Install mariadb] ***********************************************************************************************************************************
+2026-04-17 20:20:17,918 p=2160 u=ubuntu n=ansible INFO| [DEPRECATION WARNING]: INJECT_FACTS_AS_VARS default to `True` is deprecated, top-level facts will not be auto injected after the change. This feature will be removed from ansible-core version 2.24.
+Origin: /home/ubuntu/pay-api-setup/roles/pay-api/tasks/main.yml:59:9
+
+57     name: mariadb105-server
+58     state: present
+59   when: ansible_os_family == "RedHat"
+           ^ column 9
+
+Use `ansible_facts["fact_name"]` (no `ansible_` prefix) instead.
+
+
+2026-04-17 20:20:17,919 p=2160 u=ubuntu n=ansible INFO| skipping: [pay-web03]
+2026-04-17 20:20:18,943 p=2160 u=ubuntu n=ansible INFO| ok: [pay-web01]
+2026-04-17 20:20:18,947 p=2160 u=ubuntu n=ansible INFO| ok: [pay-web02]
+2026-04-17 20:20:18,952 p=2160 u=ubuntu n=ansible INFO| TASK [pay-api : Start the db service on boot] **********************************************************************************************************************
+2026-04-17 20:20:19,016 p=2160 u=ubuntu n=ansible INFO| [DEPRECATION WARNING]: INJECT_FACTS_AS_VARS default to `True` is deprecated, top-level facts will not be auto injected after the change. This feature will be removed from ansible-core version 2.24.
+Origin: /home/ubuntu/pay-api-setup/roles/pay-api/tasks/main.yml:66:9
+
+64     state: started 
+65     enabled: yes
+66   when: ansible_os_family == "RedHat"  
+           ^ column 9
+
+Use `ansible_facts["fact_name"]` (no `ansible_` prefix) instead.
+
+
+2026-04-17 20:20:19,016 p=2160 u=ubuntu n=ansible INFO| skipping: [pay-web03]
+2026-04-17 20:20:19,661 p=2160 u=ubuntu n=ansible INFO| ok: [pay-web01]
+2026-04-17 20:20:19,664 p=2160 u=ubuntu n=ansible INFO| ok: [pay-web02]
+2026-04-17 20:20:19,679 p=2160 u=ubuntu n=ansible INFO| PLAY [Set up the pay-api environment] ******************************************************************************************************************************
+2026-04-17 20:20:19,684 p=2160 u=ubuntu n=ansible INFO| TASK [Gathering Facts] *********************************************************************************************************************************************
+2026-04-17 20:20:20,903 p=2160 u=ubuntu n=ansible WARNING| [WARNING]: Host 'pay-db01' is using the discovered Python interpreter at '/usr/bin/python3.9', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.20/reference_appendices/interpreter_discovery.html for more information.
+
+2026-04-17 20:20:20,904 p=2160 u=ubuntu n=ansible INFO| ok: [pay-db01]
+2026-04-17 20:20:20,908 p=2160 u=ubuntu n=ansible INFO| TASK [db : Install mariadb] ****************************************************************************************************************************************
+2026-04-17 20:20:21,978 p=2160 u=ubuntu n=ansible INFO| [DEPRECATION WARNING]: INJECT_FACTS_AS_VARS default to `True` is deprecated, top-level facts will not be auto injected after the change. This feature will be removed from ansible-core version 2.24.
+Origin: /home/ubuntu/pay-api-setup/roles/db/tasks/main.yml:9:9
+
+7     name: mariadb105-server
+8     state: present
+9   when: ansible_os_family == "RedHat"
+          ^ column 9
+
+Use `ansible_facts["fact_name"]` (no `ansible_` prefix) instead.
+
+
+2026-04-17 20:20:21,979 p=2160 u=ubuntu n=ansible INFO| ok: [pay-db01]
+2026-04-17 20:20:21,983 p=2160 u=ubuntu n=ansible INFO| TASK [db : Start the db service on boot] ***************************************************************************************************************************
+2026-04-17 20:20:22,637 p=2160 u=ubuntu n=ansible INFO| [DEPRECATION WARNING]: INJECT_FACTS_AS_VARS default to `True` is deprecated, top-level facts will not be auto injected after the change. This feature will be removed from ansible-core version 2.24.
+Origin: /home/ubuntu/pay-api-setup/roles/db/tasks/main.yml:16:9
+
+14     state: started
+15     enabled: yes
+16   when: ansible_os_family == "RedHat"  
+           ^ column 9
+
+Use `ansible_facts["fact_name"]` (no `ansible_` prefix) instead.
+
+
+2026-04-17 20:20:22,637 p=2160 u=ubuntu n=ansible INFO| ok: [pay-db01]
+2026-04-17 20:20:22,643 p=2160 u=ubuntu n=ansible INFO| PLAY RECAP *********************************************************************************************************************************************************
+2026-04-17 20:20:22,643 p=2160 u=ubuntu n=ansible INFO| pay-db01                   : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-17 20:20:22,643 p=2160 u=ubuntu n=ansible INFO| pay-web01                  : ok=6    changed=0    unreachable=0    failed=0    skipped=3    rescued=0    ignored=0   
+2026-04-17 20:20:22,643 p=2160 u=ubuntu n=ansible INFO| pay-web02                  : ok=6    changed=0    unreachable=0    failed=0    skipped=3    rescued=0    ignored=0   
+2026-04-17 20:20:22,643 p=2160 u=ubuntu n=ansible INFO| pay-web03                  : ok=4    changed=0    unreachable=0    failed=0    skipped=5    rescued=0    ignored=0   
+2026-04-17 20:24:08,438 p=2451 u=ubuntu n=ansible WARNING| [WARNING]: Host 'pay-db01' is using the discovered Python interpreter at '/usr/bin/python3.9', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.20/reference_appendices/interpreter_discovery.html for more information.
+
+2026-04-17 20:24:08,439 p=2451 u=ubuntu n=ansible INFO| pay-db01 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3.9"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2026-04-17 20:32:50,703 p=2569 u=ubuntu n=ansible INFO| PLAY [Set up the pay-api environment] ******************************************************************************************************************************
+2026-04-17 20:32:50,714 p=2569 u=ubuntu n=ansible INFO| TASK [Gathering Facts] *********************************************************************************************************************************************
+2026-04-17 20:32:52,531 p=2569 u=ubuntu n=ansible WARNING| [WARNING]: Host 'pay-web01' is using the discovered Python interpreter at '/usr/bin/python3.9', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.20/reference_appendices/interpreter_discovery.html for more information.
+
+2026-04-17 20:32:52,532 p=2569 u=ubuntu n=ansible INFO| ok: [pay-web01]
+2026-04-17 20:32:52,564 p=2569 u=ubuntu n=ansible WARNING| [WARNING]: Host 'pay-web02' is using the discovered Python interpreter at '/usr/bin/python3.9', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.20/reference_appendices/interpreter_discovery.html for more information.
+
+2026-04-17 20:32:52,564 p=2569 u=ubuntu n=ansible INFO| ok: [pay-web02]
+2026-04-17 20:32:52,687 p=2569 u=ubuntu n=ansible WARNING| [WARNING]: Host 'pay-web03' is using the discovered Python interpreter at '/usr/bin/python3.12', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.20/reference_appendices/interpreter_discovery.html for more information.
+
+2026-04-17 20:32:52,687 p=2569 u=ubuntu n=ansible INFO| ok: [pay-web03]
+2026-04-17 20:32:52,692 p=2569 u=ubuntu n=ansible INFO| TASK [pay-api : Install httpd on Centos] ***************************************************************************************************************************
+2026-04-17 20:32:52,751 p=2569 u=ubuntu n=ansible WARNING| [WARNING]: Deprecation warnings can be disabled by setting `deprecation_warnings=False` in ansible.cfg.
+
+2026-04-17 20:32:52,752 p=2569 u=ubuntu n=ansible INFO| [DEPRECATION WARNING]: INJECT_FACTS_AS_VARS default to `True` is deprecated, top-level facts will not be auto injected after the change. This feature will be removed from ansible-core version 2.24.
+Origin: /home/ubuntu/pay-api-setup/roles/pay-api/tasks/main.yml:7:9
+
+5     name: httpd
+6     state: present
+7   when: ansible_os_family == "RedHat"
+          ^ column 9
+
+Use `ansible_facts["fact_name"]` (no `ansible_` prefix) instead.
+
+
+2026-04-17 20:32:52,752 p=2569 u=ubuntu n=ansible INFO| skipping: [pay-web03]
+2026-04-17 20:32:53,921 p=2569 u=ubuntu n=ansible INFO| ok: [pay-web01]
+2026-04-17 20:32:53,975 p=2569 u=ubuntu n=ansible INFO| ok: [pay-web02]
+2026-04-17 20:32:53,981 p=2569 u=ubuntu n=ansible INFO| TASK [pay-api : Install apache2 on Ubuntu] *************************************************************************************************************************
+2026-04-17 20:32:54,019 p=2569 u=ubuntu n=ansible INFO| [DEPRECATION WARNING]: INJECT_FACTS_AS_VARS default to `True` is deprecated, top-level facts will not be auto injected after the change. This feature will be removed from ansible-core version 2.24.
+Origin: /home/ubuntu/pay-api-setup/roles/pay-api/tasks/main.yml:14:9
+
+12     state: present
+13     update_cache: yes
+14   when: ansible_os_family == "Debian"
+           ^ column 9
+
+Use `ansible_facts["fact_name"]` (no `ansible_` prefix) instead.
+
+
+2026-04-17 20:32:54,020 p=2569 u=ubuntu n=ansible INFO| skipping: [pay-web01]
+2026-04-17 20:32:54,021 p=2569 u=ubuntu n=ansible INFO| skipping: [pay-web02]
+2026-04-17 20:32:56,477 p=2569 u=ubuntu n=ansible INFO| ok: [pay-web03]
+2026-04-17 20:32:56,483 p=2569 u=ubuntu n=ansible INFO| TASK [pay-api : Start httpd on Centos and enable on boot] **********************************************************************************************************
+2026-04-17 20:32:56,541 p=2569 u=ubuntu n=ansible INFO| [DEPRECATION WARNING]: INJECT_FACTS_AS_VARS default to `True` is deprecated, top-level facts will not be auto injected after the change. This feature will be removed from ansible-core version 2.24.
+Origin: /home/ubuntu/pay-api-setup/roles/pay-api/tasks/main.yml:21:9
+
+19     state: started
+20     enabled: yes
+21   when: ansible_os_family == "RedHat"
+           ^ column 9
+
+Use `ansible_facts["fact_name"]` (no `ansible_` prefix) instead.
+
+
+2026-04-17 20:32:56,542 p=2569 u=ubuntu n=ansible INFO| skipping: [pay-web03]
+2026-04-17 20:32:57,475 p=2569 u=ubuntu n=ansible INFO| ok: [pay-web01]
+2026-04-17 20:32:57,483 p=2569 u=ubuntu n=ansible INFO| ok: [pay-web02]
+2026-04-17 20:32:57,488 p=2569 u=ubuntu n=ansible INFO| TASK [pay-api : Start webservice on Ubuntu and enable on boot] *****************************************************************************************************
+2026-04-17 20:32:57,526 p=2569 u=ubuntu n=ansible INFO| [DEPRECATION WARNING]: INJECT_FACTS_AS_VARS default to `True` is deprecated, top-level facts will not be auto injected after the change. This feature will be removed from ansible-core version 2.24.
+Origin: /home/ubuntu/pay-api-setup/roles/pay-api/tasks/main.yml:29:9
+
+27     state: started
+28     enabled: yes
+29   when: ansible_os_family == "Debian"
+           ^ column 9
+
+Use `ansible_facts["fact_name"]` (no `ansible_` prefix) instead.
+
+
+2026-04-17 20:32:57,526 p=2569 u=ubuntu n=ansible INFO| skipping: [pay-web01]
+2026-04-17 20:32:57,527 p=2569 u=ubuntu n=ansible INFO| skipping: [pay-web02]
+2026-04-17 20:32:58,132 p=2569 u=ubuntu n=ansible INFO| ok: [pay-web03]
+2026-04-17 20:32:58,138 p=2569 u=ubuntu n=ansible INFO| TASK [pay-api : Install standard tools on redhat] ******************************************************************************************************************
+2026-04-17 20:32:58,201 p=2569 u=ubuntu n=ansible INFO| [DEPRECATION WARNING]: INJECT_FACTS_AS_VARS default to `True` is deprecated, top-level facts will not be auto injected after the change. This feature will be removed from ansible-core version 2.24.
+Origin: /home/ubuntu/pay-api-setup/roles/pay-api/tasks/main.yml:41:9
+
+39     - unzip
+40     - htop
+41   when: ansible_os_family == "RedHat"
+           ^ column 9
+
+Use `ansible_facts["fact_name"]` (no `ansible_` prefix) instead.
+
+
+2026-04-17 20:32:58,203 p=2569 u=ubuntu n=ansible INFO| skipping: [pay-web03] => (item=git) 
+2026-04-17 20:32:58,213 p=2569 u=ubuntu n=ansible INFO| skipping: [pay-web03] => (item=wget) 
+2026-04-17 20:32:58,218 p=2569 u=ubuntu n=ansible INFO| skipping: [pay-web03] => (item=zip) 
+2026-04-17 20:32:58,222 p=2569 u=ubuntu n=ansible INFO| skipping: [pay-web03] => (item=unzip) 
+2026-04-17 20:32:58,226 p=2569 u=ubuntu n=ansible INFO| skipping: [pay-web03] => (item=htop) 
+2026-04-17 20:32:58,229 p=2569 u=ubuntu n=ansible INFO| skipping: [pay-web03]
+2026-04-17 20:32:59,196 p=2569 u=ubuntu n=ansible INFO| ok: [pay-web01] => (item=git)
+2026-04-17 20:32:59,245 p=2569 u=ubuntu n=ansible INFO| ok: [pay-web02] => (item=git)
+2026-04-17 20:33:00,408 p=2569 u=ubuntu n=ansible INFO| ok: [pay-web01] => (item=wget)
+2026-04-17 20:33:00,438 p=2569 u=ubuntu n=ansible INFO| ok: [pay-web02] => (item=wget)
+2026-04-17 20:33:01,789 p=2569 u=ubuntu n=ansible INFO| ok: [pay-web01] => (item=zip)
+2026-04-17 20:33:02,172 p=2569 u=ubuntu n=ansible INFO| ok: [pay-web02] => (item=zip)
+2026-04-17 20:33:03,838 p=2569 u=ubuntu n=ansible INFO| ok: [pay-web01] => (item=unzip)
+2026-04-17 20:33:04,782 p=2569 u=ubuntu n=ansible INFO| ok: [pay-web02] => (item=unzip)
+2026-04-17 20:33:04,895 p=2569 u=ubuntu n=ansible INFO| ok: [pay-web01] => (item=htop)
+2026-04-17 20:33:05,892 p=2569 u=ubuntu n=ansible INFO| ok: [pay-web02] => (item=htop)
+2026-04-17 20:33:05,901 p=2569 u=ubuntu n=ansible INFO| TASK [pay-api : Install standard tools on ubuntu] ******************************************************************************************************************
+2026-04-17 20:33:05,932 p=2569 u=ubuntu n=ansible INFO| [DEPRECATION WARNING]: INJECT_FACTS_AS_VARS default to `True` is deprecated, top-level facts will not be auto injected after the change. This feature will be removed from ansible-core version 2.24.
+Origin: /home/ubuntu/pay-api-setup/roles/pay-api/tasks/main.yml:53:9
+
+51     - unzip
+52     - htop
+53   when: ansible_os_family == "Debian"
+           ^ column 9
+
+Use `ansible_facts["fact_name"]` (no `ansible_` prefix) instead.
+
+
+2026-04-17 20:33:05,932 p=2569 u=ubuntu n=ansible INFO| skipping: [pay-web01] => (item=git) 
+2026-04-17 20:33:05,934 p=2569 u=ubuntu n=ansible INFO| skipping: [pay-web01] => (item=wget) 
+2026-04-17 20:33:05,946 p=2569 u=ubuntu n=ansible INFO| skipping: [pay-web01] => (item=zip) 
+2026-04-17 20:33:05,950 p=2569 u=ubuntu n=ansible INFO| skipping: [pay-web01] => (item=unzip) 
+2026-04-17 20:33:05,951 p=2569 u=ubuntu n=ansible INFO| skipping: [pay-web01] => (item=htop) 
+2026-04-17 20:33:05,967 p=2569 u=ubuntu n=ansible INFO| skipping: [pay-web02] => (item=git) 
+2026-04-17 20:33:05,970 p=2569 u=ubuntu n=ansible INFO| skipping: [pay-web02] => (item=wget) 
+2026-04-17 20:33:05,973 p=2569 u=ubuntu n=ansible INFO| skipping: [pay-web02] => (item=zip) 
+2026-04-17 20:33:05,977 p=2569 u=ubuntu n=ansible INFO| skipping: [pay-web01]
+2026-04-17 20:33:05,978 p=2569 u=ubuntu n=ansible INFO| skipping: [pay-web02] => (item=unzip) 
+2026-04-17 20:33:05,979 p=2569 u=ubuntu n=ansible INFO| skipping: [pay-web02] => (item=htop) 
+2026-04-17 20:33:05,983 p=2569 u=ubuntu n=ansible INFO| skipping: [pay-web02]
+2026-04-17 20:33:07,188 p=2569 u=ubuntu n=ansible INFO| ok: [pay-web03] => (item=git)
+2026-04-17 20:33:08,356 p=2569 u=ubuntu n=ansible INFO| ok: [pay-web03] => (item=wget)
+2026-04-17 20:33:09,516 p=2569 u=ubuntu n=ansible INFO| ok: [pay-web03] => (item=zip)
+2026-04-17 20:33:10,684 p=2569 u=ubuntu n=ansible INFO| ok: [pay-web03] => (item=unzip)
+2026-04-17 20:33:11,835 p=2569 u=ubuntu n=ansible INFO| ok: [pay-web03] => (item=htop)
+2026-04-17 20:33:11,844 p=2569 u=ubuntu n=ansible INFO| TASK [pay-api : Install mariadb] ***********************************************************************************************************************************
+2026-04-17 20:33:11,912 p=2569 u=ubuntu n=ansible INFO| [DEPRECATION WARNING]: INJECT_FACTS_AS_VARS default to `True` is deprecated, top-level facts will not be auto injected after the change. This feature will be removed from ansible-core version 2.24.
+Origin: /home/ubuntu/pay-api-setup/roles/pay-api/tasks/main.yml:59:9
+
+57     name: mariadb105-server
+58     state: present
+59   when: ansible_os_family == "RedHat"
+           ^ column 9
+
+Use `ansible_facts["fact_name"]` (no `ansible_` prefix) instead.
+
+
+2026-04-17 20:33:11,913 p=2569 u=ubuntu n=ansible INFO| skipping: [pay-web03]
+2026-04-17 20:33:12,887 p=2569 u=ubuntu n=ansible INFO| ok: [pay-web01]
+2026-04-17 20:33:12,989 p=2569 u=ubuntu n=ansible INFO| ok: [pay-web02]
+2026-04-17 20:33:12,995 p=2569 u=ubuntu n=ansible INFO| TASK [pay-api : Start the db service on boot] **********************************************************************************************************************
+2026-04-17 20:33:13,060 p=2569 u=ubuntu n=ansible INFO| [DEPRECATION WARNING]: INJECT_FACTS_AS_VARS default to `True` is deprecated, top-level facts will not be auto injected after the change. This feature will be removed from ansible-core version 2.24.
+Origin: /home/ubuntu/pay-api-setup/roles/pay-api/tasks/main.yml:66:9
+
+64     state: started 
+65     enabled: yes
+66   when: ansible_os_family == "RedHat"  
+           ^ column 9
+
+Use `ansible_facts["fact_name"]` (no `ansible_` prefix) instead.
+
+
+2026-04-17 20:33:13,060 p=2569 u=ubuntu n=ansible INFO| skipping: [pay-web03]
+2026-04-17 20:33:13,665 p=2569 u=ubuntu n=ansible INFO| ok: [pay-web01]
+2026-04-17 20:33:13,695 p=2569 u=ubuntu n=ansible INFO| ok: [pay-web02]
+2026-04-17 20:33:13,710 p=2569 u=ubuntu n=ansible INFO| PLAY [Set up the pay-api environment] ******************************************************************************************************************************
+2026-04-17 20:33:13,715 p=2569 u=ubuntu n=ansible INFO| TASK [Gathering Facts] *********************************************************************************************************************************************
+2026-04-17 20:33:14,935 p=2569 u=ubuntu n=ansible WARNING| [WARNING]: Host 'pay-db01' is using the discovered Python interpreter at '/usr/bin/python3.9', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.20/reference_appendices/interpreter_discovery.html for more information.
+
+2026-04-17 20:33:14,935 p=2569 u=ubuntu n=ansible INFO| ok: [pay-db01]
+2026-04-17 20:33:14,940 p=2569 u=ubuntu n=ansible INFO| TASK [db : Install mariadb] ****************************************************************************************************************************************
+2026-04-17 20:33:15,967 p=2569 u=ubuntu n=ansible INFO| [DEPRECATION WARNING]: INJECT_FACTS_AS_VARS default to `True` is deprecated, top-level facts will not be auto injected after the change. This feature will be removed from ansible-core version 2.24.
+Origin: /home/ubuntu/pay-api-setup/roles/db/tasks/main.yml:9:9
+
+7     name: mariadb105-server
+8     state: present
+9   when: ansible_os_family == "RedHat"
+          ^ column 9
+
+Use `ansible_facts["fact_name"]` (no `ansible_` prefix) instead.
+
+
+2026-04-17 20:33:15,967 p=2569 u=ubuntu n=ansible INFO| ok: [pay-db01]
+2026-04-17 20:33:15,971 p=2569 u=ubuntu n=ansible INFO| TASK [db : Start the db service on boot] ***************************************************************************************************************************
+2026-04-17 20:33:16,636 p=2569 u=ubuntu n=ansible INFO| [DEPRECATION WARNING]: INJECT_FACTS_AS_VARS default to `True` is deprecated, top-level facts will not be auto injected after the change. This feature will be removed from ansible-core version 2.24.
+Origin: /home/ubuntu/pay-api-setup/roles/db/tasks/main.yml:16:9
+
+14     state: started
+15     enabled: yes
+16   when: ansible_os_family == "RedHat"  
+           ^ column 9
+
+Use `ansible_facts["fact_name"]` (no `ansible_` prefix) instead.
+
+
+2026-04-17 20:33:16,636 p=2569 u=ubuntu n=ansible INFO| ok: [pay-db01]
+2026-04-17 20:33:16,642 p=2569 u=ubuntu n=ansible INFO| PLAY RECAP *********************************************************************************************************************************************************
+2026-04-17 20:33:16,642 p=2569 u=ubuntu n=ansible INFO| pay-db01                   : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-17 20:33:16,642 p=2569 u=ubuntu n=ansible INFO| pay-web01                  : ok=6    changed=0    unreachable=0    failed=0    skipped=3    rescued=0    ignored=0   
+2026-04-17 20:33:16,642 p=2569 u=ubuntu n=ansible INFO| pay-web02                  : ok=6    changed=0    unreachable=0    failed=0    skipped=3    rescued=0    ignored=0   
+2026-04-17 20:33:16,642 p=2569 u=ubuntu n=ansible INFO| pay-web03                  : ok=4    changed=0    unreachable=0    failed=0    skipped=5    rescued=0    ignored=0   
+2026-04-17 20:34:57,325 p=2852 u=ubuntu n=ansible INFO| PLAY [Set up the pay-api environment] ******************************************************************************************************************************
+2026-04-17 20:34:57,335 p=2852 u=ubuntu n=ansible INFO| TASK [Gathering Facts] *********************************************************************************************************************************************
+2026-04-17 20:34:59,094 p=2852 u=ubuntu n=ansible WARNING| [WARNING]: Host 'pay-web01' is using the discovered Python interpreter at '/usr/bin/python3.9', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.20/reference_appendices/interpreter_discovery.html for more information.
+
+2026-04-17 20:34:59,095 p=2852 u=ubuntu n=ansible INFO| ok: [pay-web01]
+2026-04-17 20:34:59,104 p=2852 u=ubuntu n=ansible WARNING| [WARNING]: Host 'pay-web02' is using the discovered Python interpreter at '/usr/bin/python3.9', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.20/reference_appendices/interpreter_discovery.html for more information.
+
+2026-04-17 20:34:59,104 p=2852 u=ubuntu n=ansible INFO| ok: [pay-web02]
+2026-04-17 20:34:59,307 p=2852 u=ubuntu n=ansible WARNING| [WARNING]: Host 'pay-web03' is using the discovered Python interpreter at '/usr/bin/python3.12', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.20/reference_appendices/interpreter_discovery.html for more information.
+
+2026-04-17 20:34:59,307 p=2852 u=ubuntu n=ansible INFO| ok: [pay-web03]
+2026-04-17 20:34:59,312 p=2852 u=ubuntu n=ansible INFO| TASK [pay-api : Install httpd on Centos] ***************************************************************************************************************************
+2026-04-17 20:34:59,369 p=2852 u=ubuntu n=ansible WARNING| [WARNING]: Deprecation warnings can be disabled by setting `deprecation_warnings=False` in ansible.cfg.
+
+2026-04-17 20:34:59,370 p=2852 u=ubuntu n=ansible INFO| [DEPRECATION WARNING]: INJECT_FACTS_AS_VARS default to `True` is deprecated, top-level facts will not be auto injected after the change. This feature will be removed from ansible-core version 2.24.
+Origin: /home/ubuntu/pay-api-setup/roles/pay-api/tasks/main.yml:7:9
+
+5     name: httpd
+6     state: present
+7   when: ansible_os_family == "RedHat"
+          ^ column 9
+
+Use `ansible_facts["fact_name"]` (no `ansible_` prefix) instead.
+
+
+2026-04-17 20:34:59,370 p=2852 u=ubuntu n=ansible INFO| skipping: [pay-web03]
+2026-04-17 20:35:00,713 p=2852 u=ubuntu n=ansible INFO| ok: [pay-web01]
+2026-04-17 20:35:00,831 p=2852 u=ubuntu n=ansible INFO| ok: [pay-web02]
+2026-04-17 20:35:00,837 p=2852 u=ubuntu n=ansible INFO| TASK [pay-api : Install apache2 on Ubuntu] *************************************************************************************************************************
+2026-04-17 20:35:00,873 p=2852 u=ubuntu n=ansible INFO| [DEPRECATION WARNING]: INJECT_FACTS_AS_VARS default to `True` is deprecated, top-level facts will not be auto injected after the change. This feature will be removed from ansible-core version 2.24.
+Origin: /home/ubuntu/pay-api-setup/roles/pay-api/tasks/main.yml:14:9
+
+12     state: present
+13     update_cache: yes
+14   when: ansible_os_family == "Debian"
+           ^ column 9
+
+Use `ansible_facts["fact_name"]` (no `ansible_` prefix) instead.
+
+
+2026-04-17 20:35:00,875 p=2852 u=ubuntu n=ansible INFO| skipping: [pay-web01]
+2026-04-17 20:35:00,876 p=2852 u=ubuntu n=ansible INFO| skipping: [pay-web02]
+2026-04-17 20:35:04,338 p=2852 u=ubuntu n=ansible INFO| ok: [pay-web03]
+2026-04-17 20:35:04,345 p=2852 u=ubuntu n=ansible INFO| TASK [pay-api : Start httpd on Centos and enable on boot] **********************************************************************************************************
+2026-04-17 20:35:04,407 p=2852 u=ubuntu n=ansible INFO| [DEPRECATION WARNING]: INJECT_FACTS_AS_VARS default to `True` is deprecated, top-level facts will not be auto injected after the change. This feature will be removed from ansible-core version 2.24.
+Origin: /home/ubuntu/pay-api-setup/roles/pay-api/tasks/main.yml:21:9
+
+19     state: started
+20     enabled: yes
+21   when: ansible_os_family == "RedHat"
+           ^ column 9
+
+Use `ansible_facts["fact_name"]` (no `ansible_` prefix) instead.
+
+
+2026-04-17 20:35:04,409 p=2852 u=ubuntu n=ansible INFO| skipping: [pay-web03]
+2026-04-17 20:35:05,371 p=2852 u=ubuntu n=ansible INFO| ok: [pay-web01]
+2026-04-17 20:35:05,633 p=2852 u=ubuntu n=ansible INFO| ok: [pay-web02]
+2026-04-17 20:35:05,639 p=2852 u=ubuntu n=ansible INFO| TASK [pay-api : Start webservice on Ubuntu and enable on boot] *****************************************************************************************************
+2026-04-17 20:35:05,679 p=2852 u=ubuntu n=ansible INFO| [DEPRECATION WARNING]: INJECT_FACTS_AS_VARS default to `True` is deprecated, top-level facts will not be auto injected after the change. This feature will be removed from ansible-core version 2.24.
+Origin: /home/ubuntu/pay-api-setup/roles/pay-api/tasks/main.yml:29:9
+
+27     state: started
+28     enabled: yes
+29   when: ansible_os_family == "Debian"
+           ^ column 9
+
+Use `ansible_facts["fact_name"]` (no `ansible_` prefix) instead.
+
+
+2026-04-17 20:35:05,680 p=2852 u=ubuntu n=ansible INFO| skipping: [pay-web01]
+2026-04-17 20:35:05,681 p=2852 u=ubuntu n=ansible INFO| skipping: [pay-web02]
+2026-04-17 20:35:06,301 p=2852 u=ubuntu n=ansible INFO| ok: [pay-web03]
+2026-04-17 20:35:06,306 p=2852 u=ubuntu n=ansible INFO| TASK [pay-api : Install standard tools on redhat] ******************************************************************************************************************
+2026-04-17 20:35:06,376 p=2852 u=ubuntu n=ansible INFO| [DEPRECATION WARNING]: INJECT_FACTS_AS_VARS default to `True` is deprecated, top-level facts will not be auto injected after the change. This feature will be removed from ansible-core version 2.24.
+Origin: /home/ubuntu/pay-api-setup/roles/pay-api/tasks/main.yml:41:9
+
+39     - unzip
+40     - htop
+41   when: ansible_os_family == "RedHat"
+           ^ column 9
+
+Use `ansible_facts["fact_name"]` (no `ansible_` prefix) instead.
+
+
+2026-04-17 20:35:06,377 p=2852 u=ubuntu n=ansible INFO| skipping: [pay-web03] => (item=git) 
+2026-04-17 20:35:06,383 p=2852 u=ubuntu n=ansible INFO| skipping: [pay-web03] => (item=wget) 
+2026-04-17 20:35:06,385 p=2852 u=ubuntu n=ansible INFO| skipping: [pay-web03] => (item=zip) 
+2026-04-17 20:35:06,391 p=2852 u=ubuntu n=ansible INFO| skipping: [pay-web03] => (item=unzip) 
+2026-04-17 20:35:06,396 p=2852 u=ubuntu n=ansible INFO| skipping: [pay-web03] => (item=htop) 
+2026-04-17 20:35:06,399 p=2852 u=ubuntu n=ansible INFO| skipping: [pay-web03]
+2026-04-17 20:35:07,397 p=2852 u=ubuntu n=ansible INFO| ok: [pay-web01] => (item=git)
+2026-04-17 20:35:07,440 p=2852 u=ubuntu n=ansible INFO| ok: [pay-web02] => (item=git)
+2026-04-17 20:35:08,442 p=2852 u=ubuntu n=ansible INFO| ok: [pay-web01] => (item=wget)
+2026-04-17 20:35:08,533 p=2852 u=ubuntu n=ansible INFO| ok: [pay-web02] => (item=wget)
+2026-04-17 20:35:09,467 p=2852 u=ubuntu n=ansible INFO| ok: [pay-web01] => (item=zip)
+2026-04-17 20:35:09,587 p=2852 u=ubuntu n=ansible INFO| ok: [pay-web02] => (item=zip)
+2026-04-17 20:35:10,497 p=2852 u=ubuntu n=ansible INFO| ok: [pay-web01] => (item=unzip)
+2026-04-17 20:35:10,668 p=2852 u=ubuntu n=ansible INFO| ok: [pay-web02] => (item=unzip)
+2026-04-17 20:35:11,516 p=2852 u=ubuntu n=ansible INFO| ok: [pay-web01] => (item=htop)
+2026-04-17 20:35:11,706 p=2852 u=ubuntu n=ansible INFO| ok: [pay-web02] => (item=htop)
+2026-04-17 20:35:11,714 p=2852 u=ubuntu n=ansible INFO| TASK [pay-api : Install standard tools on ubuntu] ******************************************************************************************************************
+2026-04-17 20:35:11,744 p=2852 u=ubuntu n=ansible INFO| [DEPRECATION WARNING]: INJECT_FACTS_AS_VARS default to `True` is deprecated, top-level facts will not be auto injected after the change. This feature will be removed from ansible-core version 2.24.
+Origin: /home/ubuntu/pay-api-setup/roles/pay-api/tasks/main.yml:53:9
+
+51     - unzip
+52     - htop
+53   when: ansible_os_family == "Debian"
+           ^ column 9
+
+Use `ansible_facts["fact_name"]` (no `ansible_` prefix) instead.
+
+
+2026-04-17 20:35:11,745 p=2852 u=ubuntu n=ansible INFO| skipping: [pay-web01] => (item=git) 
+2026-04-17 20:35:11,756 p=2852 u=ubuntu n=ansible INFO| skipping: [pay-web01] => (item=wget) 
+2026-04-17 20:35:11,760 p=2852 u=ubuntu n=ansible INFO| skipping: [pay-web01] => (item=zip) 
+2026-04-17 20:35:11,770 p=2852 u=ubuntu n=ansible INFO| skipping: [pay-web02] => (item=git) 
+2026-04-17 20:35:11,779 p=2852 u=ubuntu n=ansible INFO| skipping: [pay-web01] => (item=unzip) 
+2026-04-17 20:35:11,783 p=2852 u=ubuntu n=ansible INFO| skipping: [pay-web02] => (item=wget) 
+2026-04-17 20:35:11,786 p=2852 u=ubuntu n=ansible INFO| skipping: [pay-web01] => (item=htop) 
+2026-04-17 20:35:11,790 p=2852 u=ubuntu n=ansible INFO| skipping: [pay-web01]
+2026-04-17 20:35:11,791 p=2852 u=ubuntu n=ansible INFO| skipping: [pay-web02] => (item=zip) 
+2026-04-17 20:35:11,793 p=2852 u=ubuntu n=ansible INFO| skipping: [pay-web02] => (item=unzip) 
+2026-04-17 20:35:11,795 p=2852 u=ubuntu n=ansible INFO| skipping: [pay-web02] => (item=htop) 
+2026-04-17 20:35:11,798 p=2852 u=ubuntu n=ansible INFO| skipping: [pay-web02]
+2026-04-17 20:35:12,964 p=2852 u=ubuntu n=ansible INFO| ok: [pay-web03] => (item=git)
+2026-04-17 20:35:14,162 p=2852 u=ubuntu n=ansible INFO| ok: [pay-web03] => (item=wget)
+2026-04-17 20:35:15,347 p=2852 u=ubuntu n=ansible INFO| ok: [pay-web03] => (item=zip)
+2026-04-17 20:35:16,529 p=2852 u=ubuntu n=ansible INFO| ok: [pay-web03] => (item=unzip)
+2026-04-17 20:35:17,706 p=2852 u=ubuntu n=ansible INFO| ok: [pay-web03] => (item=htop)
+2026-04-17 20:35:17,714 p=2852 u=ubuntu n=ansible INFO| TASK [pay-api : Install mariadb] ***********************************************************************************************************************************
+2026-04-17 20:35:17,777 p=2852 u=ubuntu n=ansible INFO| [DEPRECATION WARNING]: INJECT_FACTS_AS_VARS default to `True` is deprecated, top-level facts will not be auto injected after the change. This feature will be removed from ansible-core version 2.24.
+Origin: /home/ubuntu/pay-api-setup/roles/pay-api/tasks/main.yml:59:9
+
+57     name: mariadb105-server
+58     state: present
+59   when: ansible_os_family == "RedHat"
+           ^ column 9
+
+Use `ansible_facts["fact_name"]` (no `ansible_` prefix) instead.
+
+
+2026-04-17 20:35:17,779 p=2852 u=ubuntu n=ansible INFO| skipping: [pay-web03]
+2026-04-17 20:35:18,771 p=2852 u=ubuntu n=ansible INFO| ok: [pay-web01]
+2026-04-17 20:35:18,808 p=2852 u=ubuntu n=ansible INFO| ok: [pay-web02]
+2026-04-17 20:35:18,815 p=2852 u=ubuntu n=ansible INFO| TASK [pay-api : Start the db service on boot] **********************************************************************************************************************
+2026-04-17 20:35:18,878 p=2852 u=ubuntu n=ansible INFO| [DEPRECATION WARNING]: INJECT_FACTS_AS_VARS default to `True` is deprecated, top-level facts will not be auto injected after the change. This feature will be removed from ansible-core version 2.24.
+Origin: /home/ubuntu/pay-api-setup/roles/pay-api/tasks/main.yml:66:9
+
+64     state: started 
+65     enabled: yes
+66   when: ansible_os_family == "RedHat"  
+           ^ column 9
+
+Use `ansible_facts["fact_name"]` (no `ansible_` prefix) instead.
+
+
+2026-04-17 20:35:18,878 p=2852 u=ubuntu n=ansible INFO| skipping: [pay-web03]
+2026-04-17 20:35:19,493 p=2852 u=ubuntu n=ansible INFO| ok: [pay-web01]
+2026-04-17 20:35:19,516 p=2852 u=ubuntu n=ansible INFO| ok: [pay-web02]
+2026-04-17 20:35:19,533 p=2852 u=ubuntu n=ansible INFO| PLAY [Set up the pay-api environment] ******************************************************************************************************************************
+2026-04-17 20:35:19,537 p=2852 u=ubuntu n=ansible INFO| TASK [Gathering Facts] *********************************************************************************************************************************************
+2026-04-17 20:35:20,729 p=2852 u=ubuntu n=ansible WARNING| [WARNING]: Host 'pay-db01' is using the discovered Python interpreter at '/usr/bin/python3.9', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.20/reference_appendices/interpreter_discovery.html for more information.
+
+2026-04-17 20:35:20,729 p=2852 u=ubuntu n=ansible INFO| ok: [pay-db01]
+2026-04-17 20:35:20,734 p=2852 u=ubuntu n=ansible INFO| TASK [db : Install mariadb] ****************************************************************************************************************************************
+2026-04-17 20:35:21,837 p=2852 u=ubuntu n=ansible INFO| [DEPRECATION WARNING]: INJECT_FACTS_AS_VARS default to `True` is deprecated, top-level facts will not be auto injected after the change. This feature will be removed from ansible-core version 2.24.
+Origin: /home/ubuntu/pay-api-setup/roles/db/tasks/main.yml:9:9
+
+7     name: mariadb105-server
+8     state: present
+9   when: ansible_os_family == "RedHat"
+          ^ column 9
+
+Use `ansible_facts["fact_name"]` (no `ansible_` prefix) instead.
+
+
+2026-04-17 20:35:21,838 p=2852 u=ubuntu n=ansible INFO| ok: [pay-db01]
+2026-04-17 20:35:21,842 p=2852 u=ubuntu n=ansible INFO| TASK [db : Start the db service on boot] ***************************************************************************************************************************
+2026-04-17 20:35:22,498 p=2852 u=ubuntu n=ansible INFO| [DEPRECATION WARNING]: INJECT_FACTS_AS_VARS default to `True` is deprecated, top-level facts will not be auto injected after the change. This feature will be removed from ansible-core version 2.24.
+Origin: /home/ubuntu/pay-api-setup/roles/db/tasks/main.yml:16:9
+
+14     state: started
+15     enabled: yes
+16   when: ansible_os_family == "RedHat"  
+           ^ column 9
+
+Use `ansible_facts["fact_name"]` (no `ansible_` prefix) instead.
+
+
+2026-04-17 20:35:22,499 p=2852 u=ubuntu n=ansible INFO| ok: [pay-db01]
+2026-04-17 20:35:22,504 p=2852 u=ubuntu n=ansible INFO| PLAY RECAP *********************************************************************************************************************************************************
+2026-04-17 20:35:22,504 p=2852 u=ubuntu n=ansible INFO| pay-db01                   : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-17 20:35:22,504 p=2852 u=ubuntu n=ansible INFO| pay-web01                  : ok=6    changed=0    unreachable=0    failed=0    skipped=3    rescued=0    ignored=0   
+2026-04-17 20:35:22,504 p=2852 u=ubuntu n=ansible INFO| pay-web02                  : ok=6    changed=0    unreachable=0    failed=0    skipped=3    rescued=0    ignored=0   
+2026-04-17 20:35:22,504 p=2852 u=ubuntu n=ansible INFO| pay-web03                  : ok=4    changed=0    unreachable=0    failed=0    skipped=5    rescued=0    ignored=0   
+2026-04-17 20:37:31,609 p=3158 u=ubuntu n=ansible INFO| PLAY [Set up the pay-api environment] ******************************************************************************************************************************
+2026-04-17 20:37:31,619 p=3158 u=ubuntu n=ansible INFO| TASK [Gathering Facts] *********************************************************************************************************************************************
+2026-04-17 20:37:33,389 p=3158 u=ubuntu n=ansible WARNING| [WARNING]: Host 'pay-web01' is using the discovered Python interpreter at '/usr/bin/python3.9', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.20/reference_appendices/interpreter_discovery.html for more information.
+
+2026-04-17 20:37:33,390 p=3158 u=ubuntu n=ansible INFO| ok: [pay-web01]
+2026-04-17 20:37:33,395 p=3158 u=ubuntu n=ansible WARNING| [WARNING]: Host 'pay-web02' is using the discovered Python interpreter at '/usr/bin/python3.9', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.20/reference_appendices/interpreter_discovery.html for more information.
+
+2026-04-17 20:37:33,395 p=3158 u=ubuntu n=ansible INFO| ok: [pay-web02]
+2026-04-17 20:37:33,612 p=3158 u=ubuntu n=ansible WARNING| [WARNING]: Host 'pay-web03' is using the discovered Python interpreter at '/usr/bin/python3.12', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.20/reference_appendices/interpreter_discovery.html for more information.
+
+2026-04-17 20:37:33,612 p=3158 u=ubuntu n=ansible INFO| ok: [pay-web03]
+2026-04-17 20:37:33,617 p=3158 u=ubuntu n=ansible INFO| TASK [pay-api : Install httpd on Centos] ***************************************************************************************************************************
+2026-04-17 20:37:33,679 p=3158 u=ubuntu n=ansible WARNING| [WARNING]: Deprecation warnings can be disabled by setting `deprecation_warnings=False` in ansible.cfg.
+
+2026-04-17 20:37:33,680 p=3158 u=ubuntu n=ansible INFO| [DEPRECATION WARNING]: INJECT_FACTS_AS_VARS default to `True` is deprecated, top-level facts will not be auto injected after the change. This feature will be removed from ansible-core version 2.24.
+Origin: /home/ubuntu/pay-api-setup/roles/pay-api/tasks/main.yml:7:9
+
+5     name: httpd
+6     state: present
+7   when: ansible_os_family == "RedHat"
+          ^ column 9
+
+Use `ansible_facts["fact_name"]` (no `ansible_` prefix) instead.
+
+
+2026-04-17 20:37:33,680 p=3158 u=ubuntu n=ansible INFO| skipping: [pay-web03]
+2026-04-17 20:37:34,849 p=3158 u=ubuntu n=ansible INFO| ok: [pay-web01]
+2026-04-17 20:37:34,855 p=3158 u=ubuntu n=ansible INFO| ok: [pay-web02]
+2026-04-17 20:37:34,860 p=3158 u=ubuntu n=ansible INFO| TASK [pay-api : Install apache2 on Ubuntu] *************************************************************************************************************************
+2026-04-17 20:37:34,896 p=3158 u=ubuntu n=ansible INFO| [DEPRECATION WARNING]: INJECT_FACTS_AS_VARS default to `True` is deprecated, top-level facts will not be auto injected after the change. This feature will be removed from ansible-core version 2.24.
+Origin: /home/ubuntu/pay-api-setup/roles/pay-api/tasks/main.yml:14:9
+
+12     state: present
+13     update_cache: yes
+14   when: ansible_os_family == "Debian"
+           ^ column 9
+
+Use `ansible_facts["fact_name"]` (no `ansible_` prefix) instead.
+
+
+2026-04-17 20:37:34,897 p=3158 u=ubuntu n=ansible INFO| skipping: [pay-web01]
+2026-04-17 20:37:34,898 p=3158 u=ubuntu n=ansible INFO| skipping: [pay-web02]
+2026-04-17 20:37:37,292 p=3158 u=ubuntu n=ansible INFO| ok: [pay-web03]
+2026-04-17 20:37:37,298 p=3158 u=ubuntu n=ansible INFO| TASK [pay-api : Start httpd on Centos and enable on boot] **********************************************************************************************************
+2026-04-17 20:37:37,362 p=3158 u=ubuntu n=ansible INFO| [DEPRECATION WARNING]: INJECT_FACTS_AS_VARS default to `True` is deprecated, top-level facts will not be auto injected after the change. This feature will be removed from ansible-core version 2.24.
+Origin: /home/ubuntu/pay-api-setup/roles/pay-api/tasks/main.yml:21:9
+
+19     state: started
+20     enabled: yes
+21   when: ansible_os_family == "RedHat"
+           ^ column 9
+
+Use `ansible_facts["fact_name"]` (no `ansible_` prefix) instead.
+
+
+2026-04-17 20:37:37,363 p=3158 u=ubuntu n=ansible INFO| skipping: [pay-web03]
+2026-04-17 20:37:38,302 p=3158 u=ubuntu n=ansible INFO| ok: [pay-web01]
+2026-04-17 20:37:38,303 p=3158 u=ubuntu n=ansible INFO| ok: [pay-web02]
+2026-04-17 20:37:38,308 p=3158 u=ubuntu n=ansible INFO| TASK [pay-api : Start webservice on Ubuntu and enable on boot] *****************************************************************************************************
+2026-04-17 20:37:38,346 p=3158 u=ubuntu n=ansible INFO| [DEPRECATION WARNING]: INJECT_FACTS_AS_VARS default to `True` is deprecated, top-level facts will not be auto injected after the change. This feature will be removed from ansible-core version 2.24.
+Origin: /home/ubuntu/pay-api-setup/roles/pay-api/tasks/main.yml:29:9
+
+27     state: started
+28     enabled: yes
+29   when: ansible_os_family == "Debian"
+           ^ column 9
+
+Use `ansible_facts["fact_name"]` (no `ansible_` prefix) instead.
+
+
+2026-04-17 20:37:38,347 p=3158 u=ubuntu n=ansible INFO| skipping: [pay-web01]
+2026-04-17 20:37:38,348 p=3158 u=ubuntu n=ansible INFO| skipping: [pay-web02]
+2026-04-17 20:37:38,956 p=3158 u=ubuntu n=ansible INFO| ok: [pay-web03]
+2026-04-17 20:37:38,961 p=3158 u=ubuntu n=ansible INFO| TASK [pay-api : Install standard tools on redhat] ******************************************************************************************************************
+2026-04-17 20:37:39,030 p=3158 u=ubuntu n=ansible INFO| [DEPRECATION WARNING]: INJECT_FACTS_AS_VARS default to `True` is deprecated, top-level facts will not be auto injected after the change. This feature will be removed from ansible-core version 2.24.
+Origin: /home/ubuntu/pay-api-setup/roles/pay-api/tasks/main.yml:41:9
+
+39     - unzip
+40     - htop
+41   when: ansible_os_family == "RedHat"
+           ^ column 9
+
+Use `ansible_facts["fact_name"]` (no `ansible_` prefix) instead.
+
+
+2026-04-17 20:37:39,031 p=3158 u=ubuntu n=ansible INFO| skipping: [pay-web03] => (item=git) 
+2026-04-17 20:37:39,035 p=3158 u=ubuntu n=ansible INFO| skipping: [pay-web03] => (item=wget) 
+2026-04-17 20:37:39,037 p=3158 u=ubuntu n=ansible INFO| skipping: [pay-web03] => (item=zip) 
+2026-04-17 20:37:39,042 p=3158 u=ubuntu n=ansible INFO| skipping: [pay-web03] => (item=unzip) 
+2026-04-17 20:37:39,047 p=3158 u=ubuntu n=ansible INFO| skipping: [pay-web03] => (item=htop) 
+2026-04-17 20:37:39,050 p=3158 u=ubuntu n=ansible INFO| skipping: [pay-web03]
+2026-04-17 20:37:40,061 p=3158 u=ubuntu n=ansible INFO| ok: [pay-web02] => (item=git)
+2026-04-17 20:37:40,066 p=3158 u=ubuntu n=ansible INFO| ok: [pay-web01] => (item=git)
+2026-04-17 20:37:41,099 p=3158 u=ubuntu n=ansible INFO| ok: [pay-web01] => (item=wget)
+2026-04-17 20:37:41,112 p=3158 u=ubuntu n=ansible INFO| ok: [pay-web02] => (item=wget)
+2026-04-17 20:37:42,141 p=3158 u=ubuntu n=ansible INFO| ok: [pay-web01] => (item=zip)
+2026-04-17 20:37:42,152 p=3158 u=ubuntu n=ansible INFO| ok: [pay-web02] => (item=zip)
+2026-04-17 20:37:43,174 p=3158 u=ubuntu n=ansible INFO| ok: [pay-web01] => (item=unzip)
+2026-04-17 20:37:43,188 p=3158 u=ubuntu n=ansible INFO| ok: [pay-web02] => (item=unzip)
+2026-04-17 20:37:44,193 p=3158 u=ubuntu n=ansible INFO| ok: [pay-web01] => (item=htop)
+2026-04-17 20:37:44,216 p=3158 u=ubuntu n=ansible INFO| ok: [pay-web02] => (item=htop)
+2026-04-17 20:37:44,224 p=3158 u=ubuntu n=ansible INFO| TASK [pay-api : Install standard tools on ubuntu] ******************************************************************************************************************
+2026-04-17 20:37:44,254 p=3158 u=ubuntu n=ansible INFO| [DEPRECATION WARNING]: INJECT_FACTS_AS_VARS default to `True` is deprecated, top-level facts will not be auto injected after the change. This feature will be removed from ansible-core version 2.24.
+Origin: /home/ubuntu/pay-api-setup/roles/pay-api/tasks/main.yml:53:9
+
+51     - unzip
+52     - htop
+53   when: ansible_os_family == "Debian"
+           ^ column 9
+
+Use `ansible_facts["fact_name"]` (no `ansible_` prefix) instead.
+
+
+2026-04-17 20:37:44,255 p=3158 u=ubuntu n=ansible INFO| skipping: [pay-web01] => (item=git) 
+2026-04-17 20:37:44,269 p=3158 u=ubuntu n=ansible INFO| skipping: [pay-web01] => (item=wget) 
+2026-04-17 20:37:44,279 p=3158 u=ubuntu n=ansible INFO| skipping: [pay-web01] => (item=zip) 
+2026-04-17 20:37:44,289 p=3158 u=ubuntu n=ansible INFO| skipping: [pay-web02] => (item=git) 
+2026-04-17 20:37:44,293 p=3158 u=ubuntu n=ansible INFO| skipping: [pay-web01] => (item=unzip) 
+2026-04-17 20:37:44,296 p=3158 u=ubuntu n=ansible INFO| skipping: [pay-web01] => (item=htop) 
+2026-04-17 20:37:44,299 p=3158 u=ubuntu n=ansible INFO| skipping: [pay-web02] => (item=wget) 
+2026-04-17 20:37:44,302 p=3158 u=ubuntu n=ansible INFO| skipping: [pay-web01]
+2026-04-17 20:37:44,303 p=3158 u=ubuntu n=ansible INFO| skipping: [pay-web02] => (item=zip) 
+2026-04-17 20:37:44,305 p=3158 u=ubuntu n=ansible INFO| skipping: [pay-web02] => (item=unzip) 
+2026-04-17 20:37:44,307 p=3158 u=ubuntu n=ansible INFO| skipping: [pay-web02] => (item=htop) 
+2026-04-17 20:37:44,310 p=3158 u=ubuntu n=ansible INFO| skipping: [pay-web02]
+2026-04-17 20:37:45,487 p=3158 u=ubuntu n=ansible INFO| ok: [pay-web03] => (item=git)
+2026-04-17 20:37:46,661 p=3158 u=ubuntu n=ansible INFO| ok: [pay-web03] => (item=wget)
+2026-04-17 20:37:47,822 p=3158 u=ubuntu n=ansible INFO| ok: [pay-web03] => (item=zip)
+2026-04-17 20:37:49,000 p=3158 u=ubuntu n=ansible INFO| ok: [pay-web03] => (item=unzip)
+2026-04-17 20:37:50,173 p=3158 u=ubuntu n=ansible INFO| ok: [pay-web03] => (item=htop)
+2026-04-17 20:37:50,181 p=3158 u=ubuntu n=ansible INFO| TASK [pay-api : Install mariadb] ***********************************************************************************************************************************
+2026-04-17 20:37:50,245 p=3158 u=ubuntu n=ansible INFO| [DEPRECATION WARNING]: INJECT_FACTS_AS_VARS default to `True` is deprecated, top-level facts will not be auto injected after the change. This feature will be removed from ansible-core version 2.24.
+Origin: /home/ubuntu/pay-api-setup/roles/pay-api/tasks/main.yml:59:9
+
+57     name: mariadb105-server
+58     state: present
+59   when: ansible_os_family == "RedHat"
+           ^ column 9
+
+Use `ansible_facts["fact_name"]` (no `ansible_` prefix) instead.
+
+
+2026-04-17 20:37:50,246 p=3158 u=ubuntu n=ansible INFO| skipping: [pay-web03]
+2026-04-17 20:37:51,229 p=3158 u=ubuntu n=ansible INFO| ok: [pay-web01]
+2026-04-17 20:37:51,278 p=3158 u=ubuntu n=ansible INFO| ok: [pay-web02]
+2026-04-17 20:37:51,283 p=3158 u=ubuntu n=ansible INFO| TASK [pay-api : Start the db service on boot] **********************************************************************************************************************
+2026-04-17 20:37:51,343 p=3158 u=ubuntu n=ansible INFO| [DEPRECATION WARNING]: INJECT_FACTS_AS_VARS default to `True` is deprecated, top-level facts will not be auto injected after the change. This feature will be removed from ansible-core version 2.24.
+Origin: /home/ubuntu/pay-api-setup/roles/pay-api/tasks/main.yml:66:9
+
+64     state: started 
+65     enabled: yes
+66   when: ansible_os_family == "RedHat"  
+           ^ column 9
+
+Use `ansible_facts["fact_name"]` (no `ansible_` prefix) instead.
+
+
+2026-04-17 20:37:51,344 p=3158 u=ubuntu n=ansible INFO| skipping: [pay-web03]
+2026-04-17 20:37:51,952 p=3158 u=ubuntu n=ansible INFO| ok: [pay-web01]
+2026-04-17 20:37:51,993 p=3158 u=ubuntu n=ansible INFO| ok: [pay-web02]
+2026-04-17 20:37:52,009 p=3158 u=ubuntu n=ansible INFO| PLAY [Set up the pay-api environment] ******************************************************************************************************************************
+2026-04-17 20:37:52,009 p=3158 u=ubuntu n=ansible INFO| skipping: no hosts matched
+2026-04-17 20:37:52,010 p=3158 u=ubuntu n=ansible INFO| PLAY RECAP *********************************************************************************************************************************************************
+2026-04-17 20:37:52,010 p=3158 u=ubuntu n=ansible INFO| pay-web01                  : ok=6    changed=0    unreachable=0    failed=0    skipped=3    rescued=0    ignored=0   
+2026-04-17 20:37:52,010 p=3158 u=ubuntu n=ansible INFO| pay-web02                  : ok=6    changed=0    unreachable=0    failed=0    skipped=3    rescued=0    ignored=0   
+2026-04-17 20:37:52,010 p=3158 u=ubuntu n=ansible INFO| pay-web03                  : ok=4    changed=0    unreachable=0    failed=0    skipped=5    rescued=0    ignored=0   
+2026-04-17 20:40:24,954 p=3404 u=ubuntu n=ansible INFO| PLAY [Set up the pay-api environment] ******************************************************************************************************************************
+2026-04-17 20:40:24,964 p=3404 u=ubuntu n=ansible INFO| TASK [Gathering Facts] *********************************************************************************************************************************************
+2026-04-17 20:40:26,749 p=3404 u=ubuntu n=ansible WARNING| [WARNING]: Host 'pay-web01' is using the discovered Python interpreter at '/usr/bin/python3.9', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.20/reference_appendices/interpreter_discovery.html for more information.
+
+2026-04-17 20:40:26,749 p=3404 u=ubuntu n=ansible INFO| ok: [pay-web01]
+2026-04-17 20:40:26,760 p=3404 u=ubuntu n=ansible WARNING| [WARNING]: Host 'pay-web02' is using the discovered Python interpreter at '/usr/bin/python3.9', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.20/reference_appendices/interpreter_discovery.html for more information.
+
+2026-04-17 20:40:26,760 p=3404 u=ubuntu n=ansible INFO| ok: [pay-web02]
+2026-04-17 20:40:26,983 p=3404 u=ubuntu n=ansible WARNING| [WARNING]: Host 'pay-web03' is using the discovered Python interpreter at '/usr/bin/python3.12', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.20/reference_appendices/interpreter_discovery.html for more information.
+
+2026-04-17 20:40:26,983 p=3404 u=ubuntu n=ansible INFO| ok: [pay-web03]
+2026-04-17 20:40:26,988 p=3404 u=ubuntu n=ansible INFO| TASK [pay-api : Install httpd on Centos] ***************************************************************************************************************************
+2026-04-17 20:40:27,047 p=3404 u=ubuntu n=ansible WARNING| [WARNING]: Deprecation warnings can be disabled by setting `deprecation_warnings=False` in ansible.cfg.
+
+2026-04-17 20:40:27,047 p=3404 u=ubuntu n=ansible INFO| [DEPRECATION WARNING]: INJECT_FACTS_AS_VARS default to `True` is deprecated, top-level facts will not be auto injected after the change. This feature will be removed from ansible-core version 2.24.
+Origin: /home/ubuntu/pay-api-setup/roles/pay-api/tasks/main.yml:7:9
+
+5     name: httpd
+6     state: present
+7   when: ansible_os_family == "RedHat"
+          ^ column 9
+
+Use `ansible_facts["fact_name"]` (no `ansible_` prefix) instead.
+
+
+2026-04-17 20:40:27,048 p=3404 u=ubuntu n=ansible INFO| skipping: [pay-web03]
+2026-04-17 20:40:28,229 p=3404 u=ubuntu n=ansible INFO| ok: [pay-web01]
+2026-04-17 20:40:28,235 p=3404 u=ubuntu n=ansible INFO| ok: [pay-web02]
+2026-04-17 20:40:28,240 p=3404 u=ubuntu n=ansible INFO| TASK [pay-api : Install apache2 on Ubuntu] *************************************************************************************************************************
+2026-04-17 20:40:28,277 p=3404 u=ubuntu n=ansible INFO| [DEPRECATION WARNING]: INJECT_FACTS_AS_VARS default to `True` is deprecated, top-level facts will not be auto injected after the change. This feature will be removed from ansible-core version 2.24.
+Origin: /home/ubuntu/pay-api-setup/roles/pay-api/tasks/main.yml:14:9
+
+12     state: present
+13     update_cache: yes
+14   when: ansible_os_family == "Debian"
+           ^ column 9
+
+Use `ansible_facts["fact_name"]` (no `ansible_` prefix) instead.
+
+
+2026-04-17 20:40:28,278 p=3404 u=ubuntu n=ansible INFO| skipping: [pay-web01]
+2026-04-17 20:40:28,279 p=3404 u=ubuntu n=ansible INFO| skipping: [pay-web02]
+2026-04-17 20:40:30,716 p=3404 u=ubuntu n=ansible INFO| ok: [pay-web03]
+2026-04-17 20:40:30,723 p=3404 u=ubuntu n=ansible INFO| TASK [pay-api : Start httpd on Centos and enable on boot] **********************************************************************************************************
+2026-04-17 20:40:30,788 p=3404 u=ubuntu n=ansible INFO| [DEPRECATION WARNING]: INJECT_FACTS_AS_VARS default to `True` is deprecated, top-level facts will not be auto injected after the change. This feature will be removed from ansible-core version 2.24.
+Origin: /home/ubuntu/pay-api-setup/roles/pay-api/tasks/main.yml:21:9
+
+19     state: started
+20     enabled: yes
+21   when: ansible_os_family == "RedHat"
+           ^ column 9
+
+Use `ansible_facts["fact_name"]` (no `ansible_` prefix) instead.
+
+
+2026-04-17 20:40:30,788 p=3404 u=ubuntu n=ansible INFO| skipping: [pay-web03]
+2026-04-17 20:40:31,730 p=3404 u=ubuntu n=ansible INFO| ok: [pay-web01]
+2026-04-17 20:40:31,733 p=3404 u=ubuntu n=ansible INFO| ok: [pay-web02]
+2026-04-17 20:40:31,738 p=3404 u=ubuntu n=ansible INFO| TASK [pay-api : Start webservice on Ubuntu and enable on boot] *****************************************************************************************************
+2026-04-17 20:40:31,775 p=3404 u=ubuntu n=ansible INFO| [DEPRECATION WARNING]: INJECT_FACTS_AS_VARS default to `True` is deprecated, top-level facts will not be auto injected after the change. This feature will be removed from ansible-core version 2.24.
+Origin: /home/ubuntu/pay-api-setup/roles/pay-api/tasks/main.yml:29:9
+
+27     state: started
+28     enabled: yes
+29   when: ansible_os_family == "Debian"
+           ^ column 9
+
+Use `ansible_facts["fact_name"]` (no `ansible_` prefix) instead.
+
+
+2026-04-17 20:40:31,776 p=3404 u=ubuntu n=ansible INFO| skipping: [pay-web01]
+2026-04-17 20:40:31,777 p=3404 u=ubuntu n=ansible INFO| skipping: [pay-web02]
+2026-04-17 20:40:32,377 p=3404 u=ubuntu n=ansible INFO| ok: [pay-web03]
+2026-04-17 20:40:32,382 p=3404 u=ubuntu n=ansible INFO| TASK [pay-api : Install standard tools on redhat] ******************************************************************************************************************
+2026-04-17 20:40:32,449 p=3404 u=ubuntu n=ansible INFO| [DEPRECATION WARNING]: INJECT_FACTS_AS_VARS default to `True` is deprecated, top-level facts will not be auto injected after the change. This feature will be removed from ansible-core version 2.24.
+Origin: /home/ubuntu/pay-api-setup/roles/pay-api/tasks/main.yml:41:9
+
+39     - unzip
+40     - htop
+41   when: ansible_os_family == "RedHat"
+           ^ column 9
+
+Use `ansible_facts["fact_name"]` (no `ansible_` prefix) instead.
+
+
+2026-04-17 20:40:32,452 p=3404 u=ubuntu n=ansible INFO| skipping: [pay-web03] => (item=git) 
+2026-04-17 20:40:32,455 p=3404 u=ubuntu n=ansible INFO| skipping: [pay-web03] => (item=wget) 
+2026-04-17 20:40:32,461 p=3404 u=ubuntu n=ansible INFO| skipping: [pay-web03] => (item=zip) 
+2026-04-17 20:40:32,466 p=3404 u=ubuntu n=ansible INFO| skipping: [pay-web03] => (item=unzip) 
+2026-04-17 20:40:32,470 p=3404 u=ubuntu n=ansible INFO| skipping: [pay-web03] => (item=htop) 
+2026-04-17 20:40:32,472 p=3404 u=ubuntu n=ansible INFO| skipping: [pay-web03]
+2026-04-17 20:40:33,454 p=3404 u=ubuntu n=ansible INFO| ok: [pay-web01] => (item=git)
+2026-04-17 20:40:33,478 p=3404 u=ubuntu n=ansible INFO| ok: [pay-web02] => (item=git)
+2026-04-17 20:40:34,466 p=3404 u=ubuntu n=ansible INFO| ok: [pay-web01] => (item=wget)
+2026-04-17 20:40:34,511 p=3404 u=ubuntu n=ansible INFO| ok: [pay-web02] => (item=wget)
+2026-04-17 20:40:35,510 p=3404 u=ubuntu n=ansible INFO| ok: [pay-web01] => (item=zip)
+2026-04-17 20:40:35,559 p=3404 u=ubuntu n=ansible INFO| ok: [pay-web02] => (item=zip)
+2026-04-17 20:40:36,535 p=3404 u=ubuntu n=ansible INFO| ok: [pay-web01] => (item=unzip)
+2026-04-17 20:40:36,586 p=3404 u=ubuntu n=ansible INFO| ok: [pay-web02] => (item=unzip)
+2026-04-17 20:40:37,559 p=3404 u=ubuntu n=ansible INFO| ok: [pay-web01] => (item=htop)
+2026-04-17 20:40:37,609 p=3404 u=ubuntu n=ansible INFO| ok: [pay-web02] => (item=htop)
+2026-04-17 20:40:37,617 p=3404 u=ubuntu n=ansible INFO| TASK [pay-api : Install standard tools on ubuntu] ******************************************************************************************************************
+2026-04-17 20:40:37,656 p=3404 u=ubuntu n=ansible INFO| [DEPRECATION WARNING]: INJECT_FACTS_AS_VARS default to `True` is deprecated, top-level facts will not be auto injected after the change. This feature will be removed from ansible-core version 2.24.
+Origin: /home/ubuntu/pay-api-setup/roles/pay-api/tasks/main.yml:53:9
+
+51     - unzip
+52     - htop
+53   when: ansible_os_family == "Debian"
+           ^ column 9
+
+Use `ansible_facts["fact_name"]` (no `ansible_` prefix) instead.
+
+
+2026-04-17 20:40:37,657 p=3404 u=ubuntu n=ansible INFO| skipping: [pay-web01] => (item=git) 
+2026-04-17 20:40:37,661 p=3404 u=ubuntu n=ansible INFO| skipping: [pay-web01] => (item=wget) 
+2026-04-17 20:40:37,671 p=3404 u=ubuntu n=ansible INFO| skipping: [pay-web01] => (item=zip) 
+2026-04-17 20:40:37,681 p=3404 u=ubuntu n=ansible INFO| skipping: [pay-web01] => (item=unzip) 
+2026-04-17 20:40:37,683 p=3404 u=ubuntu n=ansible INFO| skipping: [pay-web02] => (item=git) 
+2026-04-17 20:40:37,687 p=3404 u=ubuntu n=ansible INFO| skipping: [pay-web02] => (item=wget) 
+2026-04-17 20:40:37,688 p=3404 u=ubuntu n=ansible INFO| skipping: [pay-web01] => (item=htop) 
+2026-04-17 20:40:37,691 p=3404 u=ubuntu n=ansible INFO| skipping: [pay-web02] => (item=zip) 
+2026-04-17 20:40:37,693 p=3404 u=ubuntu n=ansible INFO| skipping: [pay-web01]
+2026-04-17 20:40:37,695 p=3404 u=ubuntu n=ansible INFO| skipping: [pay-web02] => (item=unzip) 
+2026-04-17 20:40:37,697 p=3404 u=ubuntu n=ansible INFO| skipping: [pay-web02] => (item=htop) 
+2026-04-17 20:40:37,700 p=3404 u=ubuntu n=ansible INFO| skipping: [pay-web02]
+2026-04-17 20:40:38,861 p=3404 u=ubuntu n=ansible INFO| ok: [pay-web03] => (item=git)
+2026-04-17 20:40:40,030 p=3404 u=ubuntu n=ansible INFO| ok: [pay-web03] => (item=wget)
+2026-04-17 20:40:41,201 p=3404 u=ubuntu n=ansible INFO| ok: [pay-web03] => (item=zip)
+2026-04-17 20:40:42,347 p=3404 u=ubuntu n=ansible INFO| ok: [pay-web03] => (item=unzip)
+2026-04-17 20:40:43,504 p=3404 u=ubuntu n=ansible INFO| ok: [pay-web03] => (item=htop)
+2026-04-17 20:40:43,512 p=3404 u=ubuntu n=ansible INFO| TASK [pay-api : Install mariadb] ***********************************************************************************************************************************
+2026-04-17 20:40:43,573 p=3404 u=ubuntu n=ansible INFO| [DEPRECATION WARNING]: INJECT_FACTS_AS_VARS default to `True` is deprecated, top-level facts will not be auto injected after the change. This feature will be removed from ansible-core version 2.24.
+Origin: /home/ubuntu/pay-api-setup/roles/pay-api/tasks/main.yml:59:9
+
+57     name: mariadb105-server
+58     state: present
+59   when: ansible_os_family == "RedHat"
+           ^ column 9
+
+Use `ansible_facts["fact_name"]` (no `ansible_` prefix) instead.
+
+
+2026-04-17 20:40:43,573 p=3404 u=ubuntu n=ansible INFO| skipping: [pay-web03]
+2026-04-17 20:40:44,554 p=3404 u=ubuntu n=ansible INFO| ok: [pay-web01]
+2026-04-17 20:40:44,616 p=3404 u=ubuntu n=ansible INFO| ok: [pay-web02]
+2026-04-17 20:40:44,621 p=3404 u=ubuntu n=ansible INFO| TASK [pay-api : Start the db service on boot] **********************************************************************************************************************
+2026-04-17 20:40:44,682 p=3404 u=ubuntu n=ansible INFO| [DEPRECATION WARNING]: INJECT_FACTS_AS_VARS default to `True` is deprecated, top-level facts will not be auto injected after the change. This feature will be removed from ansible-core version 2.24.
+Origin: /home/ubuntu/pay-api-setup/roles/pay-api/tasks/main.yml:66:9
+
+64     state: started 
+65     enabled: yes
+66   when: ansible_os_family == "RedHat"  
+           ^ column 9
+
+Use `ansible_facts["fact_name"]` (no `ansible_` prefix) instead.
+
+
+2026-04-17 20:40:44,683 p=3404 u=ubuntu n=ansible INFO| skipping: [pay-web03]
+2026-04-17 20:40:45,308 p=3404 u=ubuntu n=ansible INFO| ok: [pay-web01]
+2026-04-17 20:40:45,328 p=3404 u=ubuntu n=ansible INFO| ok: [pay-web02]
+2026-04-17 20:40:45,344 p=3404 u=ubuntu n=ansible INFO| PLAY [Set up the pay-api environment] ******************************************************************************************************************************
+2026-04-17 20:40:45,349 p=3404 u=ubuntu n=ansible INFO| TASK [Gathering Facts] *********************************************************************************************************************************************
+2026-04-17 20:40:46,547 p=3404 u=ubuntu n=ansible WARNING| [WARNING]: Host 'pay-db01' is using the discovered Python interpreter at '/usr/bin/python3.9', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.20/reference_appendices/interpreter_discovery.html for more information.
+
+2026-04-17 20:40:46,547 p=3404 u=ubuntu n=ansible INFO| ok: [pay-db01]
+2026-04-17 20:40:46,551 p=3404 u=ubuntu n=ansible INFO| TASK [db : Install mariadb] ****************************************************************************************************************************************
+2026-04-17 20:40:47,593 p=3404 u=ubuntu n=ansible INFO| [DEPRECATION WARNING]: INJECT_FACTS_AS_VARS default to `True` is deprecated, top-level facts will not be auto injected after the change. This feature will be removed from ansible-core version 2.24.
+Origin: /home/ubuntu/pay-api-setup/roles/db/tasks/main.yml:9:9
+
+7     name: mariadb105-server
+8     state: present
+9   when: ansible_os_family == "RedHat"
+          ^ column 9
+
+Use `ansible_facts["fact_name"]` (no `ansible_` prefix) instead.
+
+
+2026-04-17 20:40:47,593 p=3404 u=ubuntu n=ansible INFO| ok: [pay-db01]
+2026-04-17 20:40:47,609 p=3404 u=ubuntu n=ansible INFO| TASK [db : Start the db service on boot] ***************************************************************************************************************************
+2026-04-17 20:40:48,271 p=3404 u=ubuntu n=ansible INFO| [DEPRECATION WARNING]: INJECT_FACTS_AS_VARS default to `True` is deprecated, top-level facts will not be auto injected after the change. This feature will be removed from ansible-core version 2.24.
+Origin: /home/ubuntu/pay-api-setup/roles/db/tasks/main.yml:16:9
+
+14     state: started
+15     enabled: yes
+16   when: ansible_os_family == "RedHat"  
+           ^ column 9
+
+Use `ansible_facts["fact_name"]` (no `ansible_` prefix) instead.
+
+
+2026-04-17 20:40:48,272 p=3404 u=ubuntu n=ansible INFO| ok: [pay-db01]
+2026-04-17 20:40:48,277 p=3404 u=ubuntu n=ansible INFO| PLAY RECAP *********************************************************************************************************************************************************
+2026-04-17 20:40:48,278 p=3404 u=ubuntu n=ansible INFO| pay-db01                   : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-17 20:40:48,278 p=3404 u=ubuntu n=ansible INFO| pay-web01                  : ok=6    changed=0    unreachable=0    failed=0    skipped=3    rescued=0    ignored=0   
+2026-04-17 20:40:48,278 p=3404 u=ubuntu n=ansible INFO| pay-web02                  : ok=6    changed=0    unreachable=0    failed=0    skipped=3    rescued=0    ignored=0   
+2026-04-17 20:40:48,278 p=3404 u=ubuntu n=ansible INFO| pay-web03                  : ok=4    changed=0    unreachable=0    failed=0    skipped=5    rescued=0    ignored=0   
+2026-04-17 20:42:47,206 p=3674 u=ubuntu n=ansible WARNING| [WARNING]: Encountered 1 template error.
+error 1 - 'version' is undefined
+Origin: <CLI option '-a'>
+
+version
+
+
+2026-04-17 20:42:47,207 p=3674 u=ubuntu n=ansible INFO| pay-web01 | SUCCESS => {
+    "version": "<< error 1 - 'version' is undefined >>"
+}
+2026-04-17 20:42:47,268 p=3674 u=ubuntu n=ansible INFO| pay-web02 | SUCCESS => {
+    "version": "<< error 1 - 'version' is undefined >>"
+}
+2026-04-17 20:42:47,269 p=3674 u=ubuntu n=ansible INFO| pay-web03 | SUCCESS => {
+    "version": "<< error 1 - 'version' is undefined >>"
+}
+2026-04-17 20:47:18,560 p=3719 u=ubuntu n=ansible INFO| PLAY [Set up the pay-api environment] ******************************************************************************************************************************
+2026-04-17 20:47:18,570 p=3719 u=ubuntu n=ansible INFO| TASK [Gathering Facts] *********************************************************************************************************************************************
+2026-04-17 20:47:20,400 p=3719 u=ubuntu n=ansible WARNING| [WARNING]: Host 'pay-web02' is using the discovered Python interpreter at '/usr/bin/python3.9', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.20/reference_appendices/interpreter_discovery.html for more information.
+
+2026-04-17 20:47:20,400 p=3719 u=ubuntu n=ansible INFO| ok: [pay-web02]
+2026-04-17 20:47:20,422 p=3719 u=ubuntu n=ansible WARNING| [WARNING]: Host 'pay-web01' is using the discovered Python interpreter at '/usr/bin/python3.9', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.20/reference_appendices/interpreter_discovery.html for more information.
+
+2026-04-17 20:47:20,422 p=3719 u=ubuntu n=ansible INFO| ok: [pay-web01]
+2026-04-17 20:47:20,546 p=3719 u=ubuntu n=ansible WARNING| [WARNING]: Host 'pay-web03' is using the discovered Python interpreter at '/usr/bin/python3.12', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.20/reference_appendices/interpreter_discovery.html for more information.
+
+2026-04-17 20:47:20,547 p=3719 u=ubuntu n=ansible INFO| ok: [pay-web03]
+2026-04-17 20:47:20,552 p=3719 u=ubuntu n=ansible INFO| TASK [pay-api : Install httpd on Centos] ***************************************************************************************************************************
+2026-04-17 20:47:20,609 p=3719 u=ubuntu n=ansible WARNING| [WARNING]: Deprecation warnings can be disabled by setting `deprecation_warnings=False` in ansible.cfg.
+
+2026-04-17 20:47:20,610 p=3719 u=ubuntu n=ansible INFO| [DEPRECATION WARNING]: INJECT_FACTS_AS_VARS default to `True` is deprecated, top-level facts will not be auto injected after the change. This feature will be removed from ansible-core version 2.24.
+Origin: /home/ubuntu/pay-api-setup/roles/pay-api/tasks/main.yml:7:9
+
+5     name: httpd
+6     state: present
+7   when: ansible_os_family == "RedHat"
+          ^ column 9
+
+Use `ansible_facts["fact_name"]` (no `ansible_` prefix) instead.
+
+
+2026-04-17 20:47:20,611 p=3719 u=ubuntu n=ansible INFO| skipping: [pay-web03]
+2026-04-17 20:47:21,798 p=3719 u=ubuntu n=ansible INFO| ok: [pay-web02]
+2026-04-17 20:47:21,806 p=3719 u=ubuntu n=ansible INFO| ok: [pay-web01]
+2026-04-17 20:47:21,812 p=3719 u=ubuntu n=ansible INFO| TASK [pay-api : Install apache2 on Ubuntu] *************************************************************************************************************************
+2026-04-17 20:47:21,850 p=3719 u=ubuntu n=ansible INFO| [DEPRECATION WARNING]: INJECT_FACTS_AS_VARS default to `True` is deprecated, top-level facts will not be auto injected after the change. This feature will be removed from ansible-core version 2.24.
+Origin: /home/ubuntu/pay-api-setup/roles/pay-api/tasks/main.yml:14:9
+
+12     state: present
+13     update_cache: yes
+14   when: ansible_os_family == "Debian"
+           ^ column 9
+
+Use `ansible_facts["fact_name"]` (no `ansible_` prefix) instead.
+
+
+2026-04-17 20:47:21,850 p=3719 u=ubuntu n=ansible INFO| skipping: [pay-web01]
+2026-04-17 20:47:21,851 p=3719 u=ubuntu n=ansible INFO| skipping: [pay-web02]
+2026-04-17 20:47:24,303 p=3719 u=ubuntu n=ansible INFO| ok: [pay-web03]
+2026-04-17 20:47:24,309 p=3719 u=ubuntu n=ansible INFO| TASK [pay-api : Start httpd on Centos and enable on boot] **********************************************************************************************************
+2026-04-17 20:47:24,372 p=3719 u=ubuntu n=ansible INFO| [DEPRECATION WARNING]: INJECT_FACTS_AS_VARS default to `True` is deprecated, top-level facts will not be auto injected after the change. This feature will be removed from ansible-core version 2.24.
+Origin: /home/ubuntu/pay-api-setup/roles/pay-api/tasks/main.yml:21:9
+
+19     state: started
+20     enabled: yes
+21   when: ansible_os_family == "RedHat"
+           ^ column 9
+
+Use `ansible_facts["fact_name"]` (no `ansible_` prefix) instead.
+
+
+2026-04-17 20:47:24,373 p=3719 u=ubuntu n=ansible INFO| skipping: [pay-web03]
+2026-04-17 20:47:25,336 p=3719 u=ubuntu n=ansible INFO| ok: [pay-web01]
+2026-04-17 20:47:25,341 p=3719 u=ubuntu n=ansible INFO| ok: [pay-web02]
+2026-04-17 20:47:25,347 p=3719 u=ubuntu n=ansible INFO| TASK [pay-api : Start webservice on Ubuntu and enable on boot] *****************************************************************************************************
+2026-04-17 20:47:25,385 p=3719 u=ubuntu n=ansible INFO| [DEPRECATION WARNING]: INJECT_FACTS_AS_VARS default to `True` is deprecated, top-level facts will not be auto injected after the change. This feature will be removed from ansible-core version 2.24.
+Origin: /home/ubuntu/pay-api-setup/roles/pay-api/tasks/main.yml:29:9
+
+27     state: started
+28     enabled: yes
+29   when: ansible_os_family == "Debian"
+           ^ column 9
+
+Use `ansible_facts["fact_name"]` (no `ansible_` prefix) instead.
+
+
+2026-04-17 20:47:25,386 p=3719 u=ubuntu n=ansible INFO| skipping: [pay-web01]
+2026-04-17 20:47:25,387 p=3719 u=ubuntu n=ansible INFO| skipping: [pay-web02]
+2026-04-17 20:47:25,993 p=3719 u=ubuntu n=ansible INFO| ok: [pay-web03]
+2026-04-17 20:47:25,998 p=3719 u=ubuntu n=ansible INFO| TASK [pay-api : Install standard tools on redhat] ******************************************************************************************************************
+2026-04-17 20:47:26,067 p=3719 u=ubuntu n=ansible INFO| [DEPRECATION WARNING]: INJECT_FACTS_AS_VARS default to `True` is deprecated, top-level facts will not be auto injected after the change. This feature will be removed from ansible-core version 2.24.
+Origin: /home/ubuntu/pay-api-setup/roles/pay-api/tasks/main.yml:41:9
+
+39     - unzip
+40     - htop
+41   when: ansible_os_family == "RedHat"
+           ^ column 9
+
+Use `ansible_facts["fact_name"]` (no `ansible_` prefix) instead.
+
+
+2026-04-17 20:47:26,068 p=3719 u=ubuntu n=ansible INFO| skipping: [pay-web03] => (item=git) 
+2026-04-17 20:47:26,072 p=3719 u=ubuntu n=ansible INFO| skipping: [pay-web03] => (item=wget) 
+2026-04-17 20:47:26,078 p=3719 u=ubuntu n=ansible INFO| skipping: [pay-web03] => (item=zip) 
+2026-04-17 20:47:26,082 p=3719 u=ubuntu n=ansible INFO| skipping: [pay-web03] => (item=unzip) 
+2026-04-17 20:47:26,086 p=3719 u=ubuntu n=ansible INFO| skipping: [pay-web03] => (item=htop) 
+2026-04-17 20:47:26,089 p=3719 u=ubuntu n=ansible INFO| skipping: [pay-web03]
+2026-04-17 20:47:27,058 p=3719 u=ubuntu n=ansible INFO| ok: [pay-web01] => (item=git)
+2026-04-17 20:47:27,109 p=3719 u=ubuntu n=ansible INFO| ok: [pay-web02] => (item=git)
+2026-04-17 20:47:28,114 p=3719 u=ubuntu n=ansible INFO| ok: [pay-web01] => (item=wget)
+2026-04-17 20:47:28,143 p=3719 u=ubuntu n=ansible INFO| ok: [pay-web02] => (item=wget)
+2026-04-17 20:47:29,158 p=3719 u=ubuntu n=ansible INFO| ok: [pay-web01] => (item=zip)
+2026-04-17 20:47:29,184 p=3719 u=ubuntu n=ansible INFO| ok: [pay-web02] => (item=zip)
+2026-04-17 20:47:30,212 p=3719 u=ubuntu n=ansible INFO| ok: [pay-web01] => (item=unzip)
+2026-04-17 20:47:30,244 p=3719 u=ubuntu n=ansible INFO| ok: [pay-web02] => (item=unzip)
+2026-04-17 20:47:31,243 p=3719 u=ubuntu n=ansible INFO| ok: [pay-web01] => (item=htop)
+2026-04-17 20:47:31,295 p=3719 u=ubuntu n=ansible INFO| ok: [pay-web02] => (item=htop)
+2026-04-17 20:47:31,303 p=3719 u=ubuntu n=ansible INFO| TASK [pay-api : Install standard tools on ubuntu] ******************************************************************************************************************
+2026-04-17 20:47:31,333 p=3719 u=ubuntu n=ansible INFO| [DEPRECATION WARNING]: INJECT_FACTS_AS_VARS default to `True` is deprecated, top-level facts will not be auto injected after the change. This feature will be removed from ansible-core version 2.24.
+Origin: /home/ubuntu/pay-api-setup/roles/pay-api/tasks/main.yml:53:9
+
+51     - unzip
+52     - htop
+53   when: ansible_os_family == "Debian"
+           ^ column 9
+
+Use `ansible_facts["fact_name"]` (no `ansible_` prefix) instead.
+
+
+2026-04-17 20:47:31,342 p=3719 u=ubuntu n=ansible INFO| skipping: [pay-web01] => (item=git) 
+2026-04-17 20:47:31,349 p=3719 u=ubuntu n=ansible INFO| skipping: [pay-web01] => (item=wget) 
+2026-04-17 20:47:31,357 p=3719 u=ubuntu n=ansible INFO| skipping: [pay-web01] => (item=zip) 
+2026-04-17 20:47:31,367 p=3719 u=ubuntu n=ansible INFO| skipping: [pay-web01] => (item=unzip) 
+2026-04-17 20:47:31,371 p=3719 u=ubuntu n=ansible INFO| skipping: [pay-web02] => (item=git) 
+2026-04-17 20:47:31,374 p=3719 u=ubuntu n=ansible INFO| skipping: [pay-web02] => (item=wget) 
+2026-04-17 20:47:31,376 p=3719 u=ubuntu n=ansible INFO| skipping: [pay-web01] => (item=htop) 
+2026-04-17 20:47:31,380 p=3719 u=ubuntu n=ansible INFO| skipping: [pay-web01]
+2026-04-17 20:47:31,381 p=3719 u=ubuntu n=ansible INFO| skipping: [pay-web02] => (item=zip) 
+2026-04-17 20:47:31,382 p=3719 u=ubuntu n=ansible INFO| skipping: [pay-web02] => (item=unzip) 
+2026-04-17 20:47:31,384 p=3719 u=ubuntu n=ansible INFO| skipping: [pay-web02] => (item=htop) 
+2026-04-17 20:47:31,387 p=3719 u=ubuntu n=ansible INFO| skipping: [pay-web02]
+2026-04-17 20:47:32,560 p=3719 u=ubuntu n=ansible INFO| ok: [pay-web03] => (item=git)
+2026-04-17 20:47:33,724 p=3719 u=ubuntu n=ansible INFO| ok: [pay-web03] => (item=wget)
+2026-04-17 20:47:34,914 p=3719 u=ubuntu n=ansible INFO| ok: [pay-web03] => (item=zip)
+2026-04-17 20:47:36,104 p=3719 u=ubuntu n=ansible INFO| ok: [pay-web03] => (item=unzip)
+2026-04-17 20:47:37,263 p=3719 u=ubuntu n=ansible INFO| ok: [pay-web03] => (item=htop)
+2026-04-17 20:47:37,271 p=3719 u=ubuntu n=ansible INFO| TASK [pay-api : Install mariadb] ***********************************************************************************************************************************
+2026-04-17 20:47:37,334 p=3719 u=ubuntu n=ansible INFO| [DEPRECATION WARNING]: INJECT_FACTS_AS_VARS default to `True` is deprecated, top-level facts will not be auto injected after the change. This feature will be removed from ansible-core version 2.24.
+Origin: /home/ubuntu/pay-api-setup/roles/pay-api/tasks/main.yml:59:9
+
+57     name: mariadb105-server
+58     state: present
+59   when: ansible_os_family == "RedHat"
+           ^ column 9
+
+Use `ansible_facts["fact_name"]` (no `ansible_` prefix) instead.
+
+
+2026-04-17 20:47:37,335 p=3719 u=ubuntu n=ansible INFO| skipping: [pay-web03]
+2026-04-17 20:47:38,318 p=3719 u=ubuntu n=ansible INFO| ok: [pay-web01]
+2026-04-17 20:47:38,337 p=3719 u=ubuntu n=ansible INFO| ok: [pay-web02]
+2026-04-17 20:47:38,342 p=3719 u=ubuntu n=ansible INFO| TASK [pay-api : Start the db service on boot] **********************************************************************************************************************
+2026-04-17 20:47:38,408 p=3719 u=ubuntu n=ansible INFO| [DEPRECATION WARNING]: INJECT_FACTS_AS_VARS default to `True` is deprecated, top-level facts will not be auto injected after the change. This feature will be removed from ansible-core version 2.24.
+Origin: /home/ubuntu/pay-api-setup/roles/pay-api/tasks/main.yml:66:9
+
+64     state: started 
+65     enabled: yes
+66   when: ansible_os_family == "RedHat"  
+           ^ column 9
+
+Use `ansible_facts["fact_name"]` (no `ansible_` prefix) instead.
+
+
+2026-04-17 20:47:38,408 p=3719 u=ubuntu n=ansible INFO| skipping: [pay-web03]
+2026-04-17 20:47:39,010 p=3719 u=ubuntu n=ansible INFO| ok: [pay-web01]
+2026-04-17 20:47:39,042 p=3719 u=ubuntu n=ansible INFO| ok: [pay-web02]
+2026-04-17 20:47:39,056 p=3719 u=ubuntu n=ansible INFO| PLAY [Set up the pay-api environment] ******************************************************************************************************************************
+2026-04-17 20:47:39,056 p=3719 u=ubuntu n=ansible INFO| skipping: no hosts matched
+2026-04-17 20:47:39,056 p=3719 u=ubuntu n=ansible INFO| PLAY RECAP *********************************************************************************************************************************************************
+2026-04-17 20:47:39,057 p=3719 u=ubuntu n=ansible INFO| pay-web01                  : ok=6    changed=0    unreachable=0    failed=0    skipped=3    rescued=0    ignored=0   
+2026-04-17 20:47:39,057 p=3719 u=ubuntu n=ansible INFO| pay-web02                  : ok=6    changed=0    unreachable=0    failed=0    skipped=3    rescued=0    ignored=0   
+2026-04-17 20:47:39,057 p=3719 u=ubuntu n=ansible INFO| pay-web03                  : ok=4    changed=0    unreachable=0    failed=0    skipped=5    rescued=0    ignored=0   
+2026-04-17 20:49:59,191 p=4000 u=ubuntu n=ansible INFO| PLAY [Set up the pay-api environment] ******************************************************************************************************************************
+2026-04-17 20:49:59,202 p=4000 u=ubuntu n=ansible INFO| TASK [Gathering Facts] *********************************************************************************************************************************************
+2026-04-17 20:50:01,405 p=4000 u=ubuntu n=ansible WARNING| [WARNING]: Host 'pay-web02' is using the discovered Python interpreter at '/usr/bin/python3.9', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.20/reference_appendices/interpreter_discovery.html for more information.
+
+2026-04-17 20:50:01,409 p=4000 u=ubuntu n=ansible INFO| ok: [pay-web02]
+2026-04-17 20:50:01,756 p=4000 u=ubuntu n=ansible WARNING| [WARNING]: Host 'pay-web01' is using the discovered Python interpreter at '/usr/bin/python3.9', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.20/reference_appendices/interpreter_discovery.html for more information.
+
+2026-04-17 20:50:01,760 p=4000 u=ubuntu n=ansible INFO| ok: [pay-web01]
+2026-04-17 20:50:02,363 p=4000 u=ubuntu n=ansible WARNING| [WARNING]: Host 'pay-web03' is using the discovered Python interpreter at '/usr/bin/python3.12', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.20/reference_appendices/interpreter_discovery.html for more information.
+
+2026-04-17 20:50:02,367 p=4000 u=ubuntu n=ansible INFO| ok: [pay-web03]
+2026-04-17 20:50:02,395 p=4000 u=ubuntu n=ansible INFO| TASK [pay-api : Install httpd on Centos] ***************************************************************************************************************************
+2026-04-17 20:50:02,595 p=4000 u=ubuntu n=ansible WARNING| [WARNING]: Deprecation warnings can be disabled by setting `deprecation_warnings=False` in ansible.cfg.
+
+2026-04-17 20:50:02,597 p=4000 u=ubuntu n=ansible INFO| [DEPRECATION WARNING]: INJECT_FACTS_AS_VARS default to `True` is deprecated, top-level facts will not be auto injected after the change. This feature will be removed from ansible-core version 2.24.
+Origin: /home/ubuntu/pay-api-setup/roles/pay-api/tasks/main.yml:7:9
+
+5     name: httpd
+6     state: present
+7   when: ansible_os_family == "RedHat"
+          ^ column 9
+
+Use `ansible_facts["fact_name"]` (no `ansible_` prefix) instead.
+
+
+2026-04-17 20:50:02,598 p=4000 u=ubuntu n=ansible INFO| skipping: [pay-web03]
+2026-04-17 20:50:04,531 p=4000 u=ubuntu n=ansible INFO| ok: [pay-web01]
+2026-04-17 20:50:05,684 p=4000 u=ubuntu n=ansible INFO| ok: [pay-web02]
+2026-04-17 20:50:05,707 p=4000 u=ubuntu n=ansible INFO| TASK [pay-api : Install apache2 on Ubuntu] *************************************************************************************************************************
+2026-04-17 20:50:05,755 p=4000 u=ubuntu n=ansible INFO| [DEPRECATION WARNING]: INJECT_FACTS_AS_VARS default to `True` is deprecated, top-level facts will not be auto injected after the change. This feature will be removed from ansible-core version 2.24.
+Origin: /home/ubuntu/pay-api-setup/roles/pay-api/tasks/main.yml:14:9
+
+12     state: present
+13     update_cache: yes
+14   when: ansible_os_family == "Debian"
+           ^ column 9
+
+Use `ansible_facts["fact_name"]` (no `ansible_` prefix) instead.
+
+
+2026-04-17 20:50:05,755 p=4000 u=ubuntu n=ansible INFO| skipping: [pay-web01]
+2026-04-17 20:50:05,756 p=4000 u=ubuntu n=ansible INFO| skipping: [pay-web02]
+2026-04-17 20:50:08,302 p=4000 u=ubuntu n=ansible INFO| ok: [pay-web03]
+2026-04-17 20:50:08,308 p=4000 u=ubuntu n=ansible INFO| TASK [pay-api : Start httpd on Centos and enable on boot] **********************************************************************************************************
+2026-04-17 20:50:08,370 p=4000 u=ubuntu n=ansible INFO| [DEPRECATION WARNING]: INJECT_FACTS_AS_VARS default to `True` is deprecated, top-level facts will not be auto injected after the change. This feature will be removed from ansible-core version 2.24.
+Origin: /home/ubuntu/pay-api-setup/roles/pay-api/tasks/main.yml:21:9
+
+19     state: started
+20     enabled: yes
+21   when: ansible_os_family == "RedHat"
+           ^ column 9
+
+Use `ansible_facts["fact_name"]` (no `ansible_` prefix) instead.
+
+
+2026-04-17 20:50:08,371 p=4000 u=ubuntu n=ansible INFO| skipping: [pay-web03]
+2026-04-17 20:50:09,318 p=4000 u=ubuntu n=ansible INFO| ok: [pay-web01]
+2026-04-17 20:50:09,326 p=4000 u=ubuntu n=ansible INFO| ok: [pay-web02]
+2026-04-17 20:50:09,331 p=4000 u=ubuntu n=ansible INFO| TASK [pay-api : Start webservice on Ubuntu and enable on boot] *****************************************************************************************************
+2026-04-17 20:50:09,371 p=4000 u=ubuntu n=ansible INFO| [DEPRECATION WARNING]: INJECT_FACTS_AS_VARS default to `True` is deprecated, top-level facts will not be auto injected after the change. This feature will be removed from ansible-core version 2.24.
+Origin: /home/ubuntu/pay-api-setup/roles/pay-api/tasks/main.yml:29:9
+
+27     state: started
+28     enabled: yes
+29   when: ansible_os_family == "Debian"
+           ^ column 9
+
+Use `ansible_facts["fact_name"]` (no `ansible_` prefix) instead.
+
+
+2026-04-17 20:50:09,371 p=4000 u=ubuntu n=ansible INFO| skipping: [pay-web01]
+2026-04-17 20:50:09,372 p=4000 u=ubuntu n=ansible INFO| skipping: [pay-web02]
+2026-04-17 20:50:09,984 p=4000 u=ubuntu n=ansible INFO| ok: [pay-web03]
+2026-04-17 20:50:09,989 p=4000 u=ubuntu n=ansible INFO| TASK [pay-api : Install standard tools on redhat] ******************************************************************************************************************
+2026-04-17 20:50:10,059 p=4000 u=ubuntu n=ansible INFO| [DEPRECATION WARNING]: INJECT_FACTS_AS_VARS default to `True` is deprecated, top-level facts will not be auto injected after the change. This feature will be removed from ansible-core version 2.24.
+Origin: /home/ubuntu/pay-api-setup/roles/pay-api/tasks/main.yml:41:9
+
+39     - unzip
+40     - htop
+41   when: ansible_os_family == "RedHat"
+           ^ column 9
+
+Use `ansible_facts["fact_name"]` (no `ansible_` prefix) instead.
+
+
+2026-04-17 20:50:10,063 p=4000 u=ubuntu n=ansible INFO| skipping: [pay-web03] => (item=git) 
+2026-04-17 20:50:10,068 p=4000 u=ubuntu n=ansible INFO| skipping: [pay-web03] => (item=wget) 
+2026-04-17 20:50:10,072 p=4000 u=ubuntu n=ansible INFO| skipping: [pay-web03] => (item=zip) 
+2026-04-17 20:50:10,076 p=4000 u=ubuntu n=ansible INFO| skipping: [pay-web03] => (item=unzip) 
+2026-04-17 20:50:10,077 p=4000 u=ubuntu n=ansible INFO| skipping: [pay-web03] => (item=htop) 
+2026-04-17 20:50:10,080 p=4000 u=ubuntu n=ansible INFO| skipping: [pay-web03]
+2026-04-17 20:50:11,080 p=4000 u=ubuntu n=ansible INFO| ok: [pay-web01] => (item=git)
+2026-04-17 20:50:11,145 p=4000 u=ubuntu n=ansible INFO| ok: [pay-web02] => (item=git)
+2026-04-17 20:50:12,108 p=4000 u=ubuntu n=ansible INFO| ok: [pay-web01] => (item=wget)
+2026-04-17 20:50:12,202 p=4000 u=ubuntu n=ansible INFO| ok: [pay-web02] => (item=wget)
+2026-04-17 20:50:13,134 p=4000 u=ubuntu n=ansible INFO| ok: [pay-web01] => (item=zip)
+2026-04-17 20:50:13,241 p=4000 u=ubuntu n=ansible INFO| ok: [pay-web02] => (item=zip)
+2026-04-17 20:50:14,151 p=4000 u=ubuntu n=ansible INFO| ok: [pay-web01] => (item=unzip)
+2026-04-17 20:50:14,287 p=4000 u=ubuntu n=ansible INFO| ok: [pay-web02] => (item=unzip)
+2026-04-17 20:50:15,191 p=4000 u=ubuntu n=ansible INFO| ok: [pay-web01] => (item=htop)
+2026-04-17 20:50:15,343 p=4000 u=ubuntu n=ansible INFO| ok: [pay-web02] => (item=htop)
+2026-04-17 20:50:15,352 p=4000 u=ubuntu n=ansible INFO| TASK [pay-api : Install standard tools on ubuntu] ******************************************************************************************************************
+2026-04-17 20:50:15,388 p=4000 u=ubuntu n=ansible INFO| [DEPRECATION WARNING]: INJECT_FACTS_AS_VARS default to `True` is deprecated, top-level facts will not be auto injected after the change. This feature will be removed from ansible-core version 2.24.
+Origin: /home/ubuntu/pay-api-setup/roles/pay-api/tasks/main.yml:53:9
+
+51     - unzip
+52     - htop
+53   when: ansible_os_family == "Debian"
+           ^ column 9
+
+Use `ansible_facts["fact_name"]` (no `ansible_` prefix) instead.
+
+
+2026-04-17 20:50:15,389 p=4000 u=ubuntu n=ansible INFO| skipping: [pay-web01] => (item=git) 
+2026-04-17 20:50:15,394 p=4000 u=ubuntu n=ansible INFO| skipping: [pay-web01] => (item=wget) 
+2026-04-17 20:50:15,398 p=4000 u=ubuntu n=ansible INFO| skipping: [pay-web01] => (item=zip) 
+2026-04-17 20:50:15,410 p=4000 u=ubuntu n=ansible INFO| skipping: [pay-web01] => (item=unzip) 
+2026-04-17 20:50:15,415 p=4000 u=ubuntu n=ansible INFO| skipping: [pay-web01] => (item=htop) 
+2026-04-17 20:50:15,421 p=4000 u=ubuntu n=ansible INFO| skipping: [pay-web01]
+2026-04-17 20:50:15,423 p=4000 u=ubuntu n=ansible INFO| skipping: [pay-web02] => (item=git) 
+2026-04-17 20:50:15,424 p=4000 u=ubuntu n=ansible INFO| skipping: [pay-web02] => (item=wget) 
+2026-04-17 20:50:15,426 p=4000 u=ubuntu n=ansible INFO| skipping: [pay-web02] => (item=zip) 
+2026-04-17 20:50:15,427 p=4000 u=ubuntu n=ansible INFO| skipping: [pay-web02] => (item=unzip) 
+2026-04-17 20:50:15,429 p=4000 u=ubuntu n=ansible INFO| skipping: [pay-web02] => (item=htop) 
+2026-04-17 20:50:15,432 p=4000 u=ubuntu n=ansible INFO| skipping: [pay-web02]
+2026-04-17 20:50:16,601 p=4000 u=ubuntu n=ansible INFO| ok: [pay-web03] => (item=git)
+2026-04-17 20:50:17,773 p=4000 u=ubuntu n=ansible INFO| ok: [pay-web03] => (item=wget)
+2026-04-17 20:50:18,969 p=4000 u=ubuntu n=ansible INFO| ok: [pay-web03] => (item=zip)
+2026-04-17 20:50:20,175 p=4000 u=ubuntu n=ansible INFO| ok: [pay-web03] => (item=unzip)
+2026-04-17 20:50:21,361 p=4000 u=ubuntu n=ansible INFO| ok: [pay-web03] => (item=htop)
+2026-04-17 20:50:21,370 p=4000 u=ubuntu n=ansible INFO| TASK [pay-api : Install mariadb] ***********************************************************************************************************************************
+2026-04-17 20:50:21,431 p=4000 u=ubuntu n=ansible INFO| [DEPRECATION WARNING]: INJECT_FACTS_AS_VARS default to `True` is deprecated, top-level facts will not be auto injected after the change. This feature will be removed from ansible-core version 2.24.
+Origin: /home/ubuntu/pay-api-setup/roles/pay-api/tasks/main.yml:59:9
+
+57     name: mariadb105-server
+58     state: present
+59   when: ansible_os_family == "RedHat"
+           ^ column 9
+
+Use `ansible_facts["fact_name"]` (no `ansible_` prefix) instead.
+
+
+2026-04-17 20:50:21,432 p=4000 u=ubuntu n=ansible INFO| skipping: [pay-web03]
+2026-04-17 20:50:22,431 p=4000 u=ubuntu n=ansible INFO| ok: [pay-web01]
+2026-04-17 20:50:22,515 p=4000 u=ubuntu n=ansible INFO| ok: [pay-web02]
+2026-04-17 20:50:22,520 p=4000 u=ubuntu n=ansible INFO| TASK [pay-api : Start the db service on boot] **********************************************************************************************************************
+2026-04-17 20:50:22,581 p=4000 u=ubuntu n=ansible INFO| [DEPRECATION WARNING]: INJECT_FACTS_AS_VARS default to `True` is deprecated, top-level facts will not be auto injected after the change. This feature will be removed from ansible-core version 2.24.
+Origin: /home/ubuntu/pay-api-setup/roles/pay-api/tasks/main.yml:66:9
+
+64     state: started 
+65     enabled: yes
+66   when: ansible_os_family == "RedHat"  
+           ^ column 9
+
+Use `ansible_facts["fact_name"]` (no `ansible_` prefix) instead.
+
+
+2026-04-17 20:50:22,582 p=4000 u=ubuntu n=ansible INFO| skipping: [pay-web03]
+2026-04-17 20:50:23,216 p=4000 u=ubuntu n=ansible INFO| ok: [pay-web01]
+2026-04-17 20:50:23,228 p=4000 u=ubuntu n=ansible INFO| ok: [pay-web02]
+2026-04-17 20:50:23,243 p=4000 u=ubuntu n=ansible INFO| PLAY [Set up the pay-api environment] ******************************************************************************************************************************
+2026-04-17 20:50:23,248 p=4000 u=ubuntu n=ansible INFO| TASK [Gathering Facts] *********************************************************************************************************************************************
+2026-04-17 20:50:24,458 p=4000 u=ubuntu n=ansible WARNING| [WARNING]: Host 'pay-db01' is using the discovered Python interpreter at '/usr/bin/python3.9', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.20/reference_appendices/interpreter_discovery.html for more information.
+
+2026-04-17 20:50:24,458 p=4000 u=ubuntu n=ansible INFO| ok: [pay-db01]
+2026-04-17 20:50:24,462 p=4000 u=ubuntu n=ansible INFO| TASK [db : Install mariadb] ****************************************************************************************************************************************
+2026-04-17 20:50:25,483 p=4000 u=ubuntu n=ansible INFO| [DEPRECATION WARNING]: INJECT_FACTS_AS_VARS default to `True` is deprecated, top-level facts will not be auto injected after the change. This feature will be removed from ansible-core version 2.24.
+Origin: /home/ubuntu/pay-api-setup/roles/db/tasks/main.yml:9:9
+
+7     name: mariadb105-server
+8     state: present
+9   when: ansible_os_family == "RedHat"
+          ^ column 9
+
+Use `ansible_facts["fact_name"]` (no `ansible_` prefix) instead.
+
+
+2026-04-17 20:50:25,483 p=4000 u=ubuntu n=ansible INFO| ok: [pay-db01]
+2026-04-17 20:50:25,488 p=4000 u=ubuntu n=ansible INFO| TASK [db : Start the db service on boot] ***************************************************************************************************************************
+2026-04-17 20:50:26,147 p=4000 u=ubuntu n=ansible INFO| [DEPRECATION WARNING]: INJECT_FACTS_AS_VARS default to `True` is deprecated, top-level facts will not be auto injected after the change. This feature will be removed from ansible-core version 2.24.
+Origin: /home/ubuntu/pay-api-setup/roles/db/tasks/main.yml:16:9
+
+14     state: started
+15     enabled: yes
+16   when: ansible_os_family == "RedHat"  
+           ^ column 9
+
+Use `ansible_facts["fact_name"]` (no `ansible_` prefix) instead.
+
+
+2026-04-17 20:50:26,147 p=4000 u=ubuntu n=ansible INFO| ok: [pay-db01]
+2026-04-17 20:50:26,153 p=4000 u=ubuntu n=ansible INFO| PLAY RECAP *********************************************************************************************************************************************************
+2026-04-17 20:50:26,153 p=4000 u=ubuntu n=ansible INFO| pay-db01                   : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-04-17 20:50:26,153 p=4000 u=ubuntu n=ansible INFO| pay-web01                  : ok=6    changed=0    unreachable=0    failed=0    skipped=3    rescued=0    ignored=0   
+2026-04-17 20:50:26,153 p=4000 u=ubuntu n=ansible INFO| pay-web02                  : ok=6    changed=0    unreachable=0    failed=0    skipped=3    rescued=0    ignored=0   
+2026-04-17 20:50:26,153 p=4000 u=ubuntu n=ansible INFO| pay-web03                  : ok=4    changed=0    unreachable=0    failed=0    skipped=5    rescued=0    ignored=0   
